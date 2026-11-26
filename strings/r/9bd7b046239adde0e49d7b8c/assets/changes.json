@@ -1,0 +1,12 @@
+{
+  "version": "v8",
+  "date": "2026-11-22",
+  "items": [
+    "Ode to Joy and Frère Jacques: playable note strings, tempo, transpose and loop.",
+    "A labelled demo stretches the strings and plays the melody without camera input.",
+    "Sampler semitones, source root and current-key following; speed and duration remain linked.",
+    "Local note captions and imported SRT/VTT aligned to sample rate and reverse.",
+    "English startup routes, exported stage journal and complete queued updates.",
+    "Melody selection and transpose stay stable when stopped, previewed or restored."
+  ]
+}

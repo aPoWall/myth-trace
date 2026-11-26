@@ -2873,6 +2873,8 @@ window.addEventListener('keyup', (event) => {
 });
 window.addEventListener('resize', () => { resizeQueued = true; }, { passive: true });
 enterButton.addEventListener('click', enterSystem);
+enterButton.disabled = false;
+enterHandsButton.disabled = false;
 enterHandsButton.addEventListener('click', () => {
   enterSystem();
   void activateHandInstrument();

@@ -17,15 +17,15 @@
           "links": [
             [
               "Play String Field",
-              "https://apowall.github.io/myth-trace/classic/?instrument=strings"
+              "https://apowall.github.io/myth-trace/strings/"
             ]
           ],
           "works": [
             {
               "title": "String Field · Constellation",
-              "action": "Начни с How to Play. Потяни мышью от A до B и отпусти, включи Sound, выбери Play и пересечи струну. В Setup можно сложить арфу и аккорды в одном поле. В v7 секция Performance играет ритм и семплы, а History сохраняет собранный инструмент.",
+              "action": "Начни с How to Play. Потяни мышью от A до B и отпусти, включи Sound, выбери Play и пересечи струну. В Setup можно сложить арфу и аккорды в одном поле. В Melodies выбери «Ode to Joy» или «Frère Jacques». Add + Demo натянет для мелодии струны и сыграет их. Rhythm / Samples добавляет ударные и сэмплы.",
               "status": "Play online",
-              "url": "https://apowall.github.io/myth-trace/classic/?instrument=strings",
+              "url": "https://apowall.github.io/myth-trace/strings/",
               "clip": null
             },
             {
@@ -1319,7 +1319,7 @@
             ],
             [
               "String Field",
-              "https://apowall.github.io/myth-trace/classic/?instrument=strings"
+              "https://apowall.github.io/myth-trace/strings/"
             ]
           ],
           "related": "runtime/input"
@@ -1430,7 +1430,7 @@
             ],
             [
               "Играть струнами",
-              "https://apowall.github.io/myth-trace/classic/?instrument=strings"
+              "https://apowall.github.io/myth-trace/strings/"
             ]
           ],
           "related": null

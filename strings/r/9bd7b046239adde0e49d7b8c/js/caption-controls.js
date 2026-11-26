@@ -1,0 +1,10 @@
+import {parseTimedText} from './captions.js';
+export function createCaptionControls({track,notify,getSampleId=()=>null}){
+ const $=id=>document.getElementById(id);let last='';
+ function render(){const s=track.getState();$('captions-enabled').checked=s.enabled;$('captions-mode').value=s.mode;$('captions-status').textContent=s.cueCount+' timed cues / '+s.eventCount+' instrument events';$('caption-source').textContent=s.mode==='sample'?'SAMPLE TRANSCRIPT / YOUR TIMED TEXT':'INSTRUMENT EVENTS / LOCAL';}
+ function download(text,name,type){const url=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+ $('captions-enabled').onchange=e=>{track.setEnabled(e.target.checked);render();};$('captions-mode').onchange=e=>{track.setMode(e.target.value);render();};
+ $('captions-import').onclick=()=>$('captions-file').click();$('captions-file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>250000)throw Error('Caption file limit is 250 KB');const cues=parseTimedText(await file.text());track.setCues(cues,{sampleId:getSampleId()});track.setMode('sample');render();notify(cues.length+' timed captions loaded · play a sample slice to follow its position');}catch(err){notify('Captions: '+err.message);}finally{e.target.value='';}};
+ $('captions-clear').onclick=()=>{track.clear();render();};$('captions-export').onclick=()=>download(track.exportVtt(),'string-field-captions.vtt','text/vtt');$('captions-events').onclick=()=>download(JSON.stringify({source:'instrument-events',events:track.getEvents()},null,2),'string-field-caption-events.json','application/json');
+ render();return {render,tick(){const text=track.getText();if(text!==last){$('caption-text').textContent=text;last=text;}$('live-captions').hidden=!text;},serialize:()=>track.serialize(),restore(data){track.restore(data);last='';$('caption-text').textContent='';$('live-captions').hidden=true;render();}};
+}
