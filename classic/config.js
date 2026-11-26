@@ -114,7 +114,7 @@ export const CONFIG = Object.freeze({
     }),
   }),
   sceneConfigurator: Object.freeze({
-    storageKey: 'mythtrace.scene-configurator.v3',
+    storageKey: 'mythtrace.classic.scene-configurator.v3',
     version: 3,
     modes: Object.freeze([0, 3, 4]),
     presetOrder: Object.freeze(['trace', 'shaper', 'kosmo', 'solaris', 'noon', 'midnight']),
@@ -299,7 +299,7 @@ export const CONFIG = Object.freeze({
     scale: 'minor-pentatonic',
   }),
   sampler: Object.freeze({
-    dbName: 'mythtrace-local-sampler',
+    dbName: 'mythtrace-classic-local-sampler',
     dbStore: 'clips',
     dbVersion: 1,
     maxClips: 10,
@@ -345,7 +345,7 @@ export const CONFIG = Object.freeze({
     }),
   }),
   performanceMapping: Object.freeze({
-    storageKey: 'mythtrace.performance-mapping.v1',
+    storageKey: 'mythtrace.classic.performance-mapping.v1',
     pinchOn: 0.62,
     pinchOff: 0.32,
     chordDistanceMax: 0.8,
@@ -355,7 +355,7 @@ export const CONFIG = Object.freeze({
     densityRateMix: 0.25,
   }),
   gestureFrame: Object.freeze({
-    storageKey: 'mythtrace.gesture-frame.v1', // gitleaks:allow · public localStorage namespace
+    storageKey: 'mythtrace.classic.gesture-frame.v1', // gitleaks:allow · public localStorage namespace
     mode: 'prompt-shader',
     minArea: 0.06,
     minConfidence: 0.55,
@@ -388,7 +388,7 @@ export const CONFIG = Object.freeze({
     }),
   }),
   frameContent: Object.freeze({
-    storageKey: 'mythtrace.frame-content.v1',
+    storageKey: 'mythtrace.classic.frame-content.v1',
     mode: 'prompt-shader',
     prompt: 'animated warm banana',
     seed: 23,
@@ -431,7 +431,7 @@ export const CONFIG = Object.freeze({
     }),
   }),
   frameZones: Object.freeze({
-    storageKey: 'mythtrace.frame-zones.v1', // gitleaks:allow · public localStorage namespace
+    storageKey: 'mythtrace.classic.frame-zones.v1', // gitleaks:allow · public localStorage namespace
     source: 'hybrid',
     objectClass: '',
     minOverlap: 0.18,
@@ -456,7 +456,7 @@ export const CONFIG = Object.freeze({
     memoryScale: 0.28,
   }),
   entities: Object.freeze({
-    storageKey: 'mythtrace.entity-console.v1',
+    storageKey: 'mythtrace.classic.entity-console.v1',
     consoleRateMs: 180,
     routeStep: 0.05,
     sourceOrder: Object.freeze(['hands', 'body', 'face', 'objects', 'pointer']),

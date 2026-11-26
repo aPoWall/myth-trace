@@ -157,7 +157,7 @@ const narrativeState = {
   source: CONFIG.narration.defaultSource,
 };
 
-const UPDATE_STATE_KEY = 'mythtrace.performance-state.v1';
+const UPDATE_STATE_KEY = 'mythtrace.classic.performance-state.v1';
 const COMPUTER_MUSIC_KEYS = Object.freeze({
   a: 0, w: 1, s: 2, e: 3, d: 4, f: 5, t: 6,
   g: 7, y: 8, h: 9, u: 10, j: 11, k: 12,
