@@ -1,0 +1,1 @@
+html:not(.ready) #stage{visibility:hidden}#boot-status{position:fixed;inset:0;display:grid;place-content:center;background:#030609;color:#b7cbd7;font:13px Menlo,monospace;padding:30px;z-index:99}html.ready #boot-status{display:none}

@@ -1,0 +1,1440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050609">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050609'/%3E%3Cpath d='M10 48V16h8l14 21 14-21h8v32h-8V29L32 50 18 29v19z' fill='%23e2e8f2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+<title>Alex Named · Myth Trace / Shaper Field · Objects Copper 01</title>
+  <meta name="description" content="The last local Shaper Field stage. Play Wire Gloves, fold Pigment around your hand, or track a subject in Objects Copper.">
+  <link rel="canonical" href="https://apowall.github.io/myth-trace/">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://apowall.github.io/myth-trace/">
+  <meta property="og:title" content="Alex Named · Myth Trace / Shaper Field · Objects Copper 01"><meta property="og:description" content="The last local Shaper Field stage. Play Wire Gloves, fold Pigment around your hand, or track a subject in Objects Copper.">
+  <meta property="og:image" content="https://apowall.github.io/myth-trace/mythtrace-shaper-cover.png?v=objects-copper-1"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Alex Named · Myth Trace · live video art">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Alex Named · Myth Trace / Shaper Field · Objects Copper 01"><meta name="twitter:description" content="The last local Shaper Field stage. Play Wire Gloves, fold Pigment around your hand, or track a subject in Objects Copper."><meta name="twitter:image" content="https://apowall.github.io/myth-trace/mythtrace-shaper-cover.png?v=objects-copper-1"><meta name="twitter:image:alt" content="Alex Named · Myth Trace · live video art">
+  <meta http-equiv="Content-Security-Policy" content="connect-src 'self' data: blob:">
+</head>
+<body>
+  <main id="stage" aria-label="MYTH TRACE · live video art by Alexander Povaliaev">
+    <video id="camera" playsinline muted aria-hidden="true"></video>
+    <canvas id="gl" aria-label="Realtime shader output"></canvas>
+    <video id="clip-local" playsinline hidden aria-label="Local clip"></video>
+    <canvas id="overlay" aria-hidden="true"></canvas>
+    <canvas id="diffusion-layer" width="384" height="384" aria-hidden="true" hidden></canvas>
+
+
+    <section id="entry" class="entry">
+      <div class="entry__trace" aria-hidden="true"></div>
+      <div class="entry__scan"></div>
+      <div id="entry-pointer" class="entry-pointer" data-active="false" data-ready="false" aria-hidden="true">
+        <span>pointer · field</span>
+      </div>
+      <header class="entry__topline">
+        <span>MYTH TRACE / ALEXANDER POVALIAEV / LIVE VIDEO ART</span>
+        <a class="edition-link" href="./editions/">SHAPER FIELD · EDITION 01 ↗</a>
+      </header>
+      <div class="entry__composition">
+        <div class="entry__hero">
+          <p class="eyebrow">camera · body · signal · memory</p>
+          <h1>MYTH<br>TRACE</h1>
+          <p class="entry__copy">Ten fingers hold ten notes. Curl one and its light falls like dust. In Aftervoice, the room carries the last word.</p>
+          <div class="entry__actions">
+            <button id="enter-demo" type="button" data-pointer-label="D · Shaper Field demo">play wire gloves <kbd>D</kbd></button>
+            <button id="enter" class="entry__hands" type="button" data-pointer-label="focus · pointer / hand / face / object">start pointer <kbd>↵</kbd></button>
+            <button id="enter-hands" class="entry__hands" type="button" data-pointer-label="camera · hands / orchestra">camera + hands</button>
+          </div>
+          <p id="entry-status" class="entry__status">pointer field online · inputs disarmed</p>
+          <p class="entry__privacy">Camera and microphone access are managed by your browser.</p>
+        </div>
+        <section class="entry__score" aria-label="First performance score">
+          <div class="entry__field-preview" aria-hidden="true"></div>
+          <header><span>SHAPER FIELD · LIVE SCORES</span></header>
+          <ol>
+            <li><button type="button" data-entry-study="wire-gloves" data-pointer-label="fingers · bass / strings"><b>WIRE GLOVES</b><span>Silk and grain follow ten finger voices over a half-time bass line.</span></button></li>
+            <li><button type="button" data-entry-study="aftervoice" data-pointer-label="mouth · voice / resonance"><b>AFTERVOICE</b><span>A copper etching opens around the mouth. A low voice returns between the notes.</span></button></li>
+          </ol>
+          <footer><span>D demo · C camera · J sound</span></footer>
+        </section>
+      </div>
+      <section id="input-ritual" class="input-ritual" aria-label="Input readiness">
+        <header>
+          <strong>LOCAL INPUTS</strong>
+          <span id="camera-label-note">camera labels appear after the first local grant</span>
+          <button type="button" class="camera-source-open" data-open-cameras aria-expanded="false" aria-controls="camera-sources">Choose camera</button>
+        </header>
+        <dl>
+          <div data-input="camera" data-state="standby"><dt>camera</dt><dd>standby</dd></div>
+          <div data-input="hands" data-state="waiting"><dt>hands</dt><dd>waiting for camera</dd></div>
+          <div data-input="pose" data-state="waiting"><dt>pose</dt><dd>waiting for camera</dd></div>
+          <div data-input="face" data-state="waiting"><dt>face</dt><dd>dedicated landmarks waiting</dd></div>
+          <div data-input="objects" data-state="waiting"><dt>objects</dt><dd>waiting for camera</dd></div>
+          <div data-input="mic" data-state="standby"><dt>mic</dt><dd>standby</dd></div>
+          <div data-input="midi" data-state="standby"><dt>midi</dt><dd>standby</dd></div>
+          <div data-input="sound" data-state="silent"><dt>sound</dt><dd>silent</dd></div>
+        </dl>
+      </section>
+    </section>
+
+    <nav id="stage-workflows" aria-label="Scene templates">
+      <select id="card-deck" aria-label="Card collection"><option value="live">Live scenes</option><option value="scores">Scored demos</option></select>
+      <div data-card-set="live">
+      <button type="button" data-workflow="face" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-face.jpg" alt=""><span>Body</span></button>
+      <button type="button" data-workflow="kosmodrom" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-kosmodrom.jpg" alt=""><span>Kosmodrom</span></button>
+      <button type="button" data-workflow="focus" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-focus.jpg" alt=""><span>Point Lattice</span></button>
+      <button type="button" data-workflow="objects" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-objects.jpg" alt=""><span>Objects</span></button>
+      <button type="button" data-workflow="pigment" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-pigment.jpg" alt=""><span>Pigment</span></button>
+      <button type="button" data-workflow="hands" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-hands.jpg" alt=""><span>Hands</span></button>
+      <button type="button" data-workflow="voice" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-voice.jpg" alt=""><span>Voice</span></button>
+      <button type="button" data-workflow="score" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-score.jpg" alt=""><span>Score</span></button>
+      <button type="button" data-workflow="air" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-air.jpg" alt=""><span>Air</span></button>
+      <button type="button" data-story-cue="blue" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-blue.jpg" alt=""><span>Sacred Forms</span></button>
+      <button type="button" data-story-cue="contour" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-contour.jpg" alt=""><span>contour</span></button>
+      <button type="button" data-story-cue="etching" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-etching.jpg" alt=""><span>etching</span></button>
+      </div>
+      <div data-card-set="scores" hidden>
+      <button type="button" data-demo-template="wire-gloves" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-wire-gloves.jpg" alt=""><span>Wire Gloves</span></button>
+      <button type="button" data-demo-template="aftervoice" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><img src="./assets/story-aftervoice.jpg" alt=""><span>Aftervoice</span></button>
+      </div>
+    </nav>
+    <aside id="story-preview" aria-labelledby="story-title" hidden>
+      <figure><img data-story-image alt=""><video id="story-gesture-film" data-story-film playsinline controls preload="none" aria-label="Performance excerpt" hidden></video><figcaption>DSCF4882 · performance still</figcaption></figure>
+        <section class="story-practice" data-story-practice hidden aria-label="Geometry rehearsal">
+          <canvas width="540" height="216" tabindex="0" aria-label="Geometry rehearsal surface"></canvas>
+          <div class="practice-choices" data-practice-focus hidden>
+            <button type="button" data-practice-mode="auto">Auto</button><button type="button" data-practice-mode="rosette">Rosette</button><button type="button" data-practice-mode="plane">Plane</button><button type="button" data-practice-mode="crystal">Crystal</button>
+          </div>
+          <div class="practice-choices" data-practice-sacred hidden>
+            <button type="button" data-practice-example="vesica">Lens</button><button type="button" data-practice-example="rosette">Rosette</button><button type="button" data-practice-example="lattice">Lattice</button><button type="button" data-practice-clear>Clear pins</button>
+          </div>
+          <output data-practice-readout aria-live="polite"></output>
+        </section>
+      <div class="story-details">
+        <header><div><span class="story-stage-label" data-card-state>Preview</span><h2 id="story-title"></h2></div><button type="button" data-story-close aria-label="Close preview">Close</button></header>
+        <dl class="story-moves"><dt>Move</dt><dd data-story-move></dd><dt>Response</dt><dd data-story-line></dd><dt>Rule</dt><dd data-story-rule></dd></dl>
+        <p data-story-input></p>
+        <footer><button type="button" data-story-apply>Apply scene</button><button type="button" data-story-hear aria-pressed="false">Hear motif</button><button type="button" data-story-watch aria-controls="story-gesture-film" aria-expanded="false" hidden>Watch gesture</button><button type="button" data-sector-preview hidden>Hear transmission</button></footer>
+        <details class="story-recipe"><summary>Scene settings</summary><dl data-story-settings></dl><button type="button" data-story-hide>Hide this card</button></details>
+        <details class="story-variant" data-story-editor>
+          <summary>Adapt with SOTNIK · local studio</summary>
+          <form data-story-direction>
+            <label for="story-direction">Direction for this story</label>
+            <textarea id="story-direction" rows="2" maxlength="280" required></textarea>
+            <button inert disabled title="Available in the local studio" type="submit" data-story-propose>Propose · VM105</button>
+          </form>
+          <p data-story-variant-status role="status" hidden></p>
+          <dl data-story-changes hidden></dl>
+          <div class="story-variant-actions">
+            <button type="button" data-story-use hidden>Apply variant</button>
+            <button type="button" data-story-restore hidden>Restore original</button>
+          </div>
+        </details>
+      </div>
+    </aside>
+
+    <aside id="node-inspector" aria-label="Live tracking points" hidden>
+      <strong>TRACKING / NODES</strong><output id="node-summary"></output>
+      <div id="node-list"></div>
+    </aside>
+    <nav id="focus-geometry" aria-label="Lattice construction" hidden>
+      <div class="focus-geometry__choices">
+        <button type="button" data-focus-geometry="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-focus-geometry="rosette" aria-pressed="false">Rosette</button>
+        <button type="button" data-focus-geometry="plane" aria-pressed="false">Plane</button>
+        <button type="button" data-focus-geometry="crystal" aria-pressed="false">Lattice</button>
+      </div>
+      <div class="focus-source"><output id="focus-guide"></output><button type="button" data-focus-camera aria-pressed="true" title="Show live camera beneath the lattice">Camera</button></div>
+    </nav>
+
+    <aside id="shaper-demo" class="shaper-demo" aria-label="Shaper Field demo" hidden>
+      <div class="shaper-demo__readout">
+        <strong data-demo-title></strong>
+        <span data-demo-guide></span>
+        <span data-demo-source></span>
+        <output data-demo-line hidden></output>
+      </div>
+      <progress class="shaper-demo__progress" data-demo-progress max="100" value="0" aria-label="Score phrase progress"></progress>
+      <div class="shaper-demo__controls">
+        <label class="shaper-demo__amount">Geometry <input type="range" min="0" max="1" step=".01" value=".82" data-demo-amount></label>
+        <label class="shaper-demo__amount">Mix <input aria-label="Score mix" type="range" min="0" max="1" step=".01" data-score-mix></label>
+        <button type="button" data-demo-frame aria-pressed="false" title="Frame the scene with two pinches">Frame</button>
+        <button type="button" data-demo-mic aria-pressed="false" title="Enable local speech recognition">Voice in <kbd>A</kbd></button>
+        <button type="button" data-demo-sound aria-pressed="false">Sound <kbd>J</kbd></button>
+        <button type="button" data-demo-close>Exit <kbd>D</kbd></button>
+      </div>
+    </aside>
+
+    <section id="sector-deck" hidden aria-label="Kosmodrom sample deck">
+      <label>Transmission <select data-sector-slot></select></label>
+      <button type="button" data-sector-play title="With the deck focused, Z X C V B N play the six Artemis cuts">Play sample</button>
+      <button type="button" data-sector-arm aria-pressed="false">Arm pads</button>
+      <button type="button" data-sector-stop>Stop samples</button>
+      <label>Level <input data-sector-level type="range" min="0" max="1" step=".01" value=".84"></label>
+      <output data-sector-status>Standby</output>
+    </section>
+    <nav id="controls" class="controls" aria-label="Instrument controls">
+      <div class="controls__modes" aria-label="Visual states">
+        <button type="button" data-action="mode" data-mode="0" aria-label="Myth Trace"><span>myth</span></button>
+        <button type="button" data-action="mode" data-mode="1" aria-label="Ghost Wire"><span>wire</span></button>
+        <button type="button" data-action="mode" data-mode="2" aria-label="Flesh Grid"><span>grid</span></button>
+        <button type="button" data-action="mode" data-mode="3" aria-label="Shaper Field" title="4 · Shaper Field"><span>field</span></button>
+        <button type="button" data-action="mode" data-mode="4" aria-label="Cold Memory"><span>memory</span></button>
+      </div>
+      <div class="controls__primary">
+        <button type="button" data-action="camera" title="Toggle camera"><span data-camera-action-label>camera</span> <kbd>C</kbd></button>
+        <button type="button" class="camera-source-open" data-open-cameras aria-expanded="false" aria-controls="camera-sources">Sources</button>
+        <button type="button" data-action="patch">geometry <kbd>Q</kbd></button>
+        <button type="button" data-action="frame-setup">frame <kbd>G</kbd></button>
+        <button type="button" data-action="music">music <kbd>I</kbd></button>
+        <button type="button" data-action="scene">visual <kbd>T</kbd></button>
+        <button type="button" data-action="advanced">setup</button>
+      </div>
+    </nav>
+
+    <aside id="camera-sources" aria-label="Camera sources" hidden>
+      <header><strong>CAMERA SOURCES</strong><button type="button" data-close-cameras>Close</button></header>
+      <div data-camera-list></div>
+      <figure data-source-monitor hidden>
+        <video muted autoplay playsinline aria-label="Unfiltered camera preview"></video>
+        <figcaption data-source-caption></figcaption>
+      </figure>
+      <output data-camera-message aria-live="polite"></output>
+      <details class="camera-preview-help" data-preview-help hidden>
+        <summary>iPhone missing?</summary>
+        <p>In QuickTime Player, choose File → New Movie Recording and select your iPhone in the camera menu. Leave its preview open.</p>
+        <button type="button" data-phone-preview>Use a preview window · video only</button>
+      </details>
+      <footer><button type="button" data-refresh-cameras>Refresh devices</button><button type="button" data-stop-camera>Camera off</button></footer>
+    </aside>
+
+    <aside id="stage-agent" class="agent-dock" aria-label="Sotnik agent side panel" hidden>
+      <header class="music-console__header"><div><strong>AGENT / SOTNIK</strong><span>LOCAL TEXT CUES</span></div><button type="button" data-agent-close>hide</button></header>
+      <section class="patch-console__bridge geometry-voice" aria-label="Sotnik voice controls">
+        <header><strong>SOTNIK / LOCAL</strong><output data-sotnik-status aria-live="polite">Ready · text cues</output></header>
+        <form data-geometry-command>
+          <input type="text" aria-label="Scene command" placeholder="Try: Сотник, холодный свет, сложная решётка, тихие струнные" maxlength="280">
+          <button type="submit">apply</button>
+        </form>
+        <div class="geometry-actions">
+          <button inert disabled title="Available in the local studio" type="button" data-geometry-record aria-pressed="false">speak</button>
+          <button inert disabled title="Available in the local studio" type="button" data-geometry-listen aria-pressed="false">listen · off</button>
+          <button type="button" data-agent-stop>stop agent</button>
+          <button inert disabled title="Available in the local studio" type="button" data-sotnik-analyse>server shadow</button>
+          <button inert disabled title="Available in the local studio" type="button" data-sotnik-live aria-pressed="false">live shadow</button>
+        </div>
+        <div class="geometry-actions">
+          <button inert disabled title="Available in the local studio" type="button" data-agent-guest>Play along · VM105</button>
+          <button type="button" data-agent-release disabled>End guest part</button>
+        </div>
+        <p data-agent-part aria-live="polite">Ask for a key, a timbre and a number of bars. Try “Сотник, подыграй два такта в до миноре”.</p>
+        <p data-agent-listening>Type a local scene cue. Voice recognition and server accompaniment are available in the studio.</p>
+        <p data-agent-last>Change geometry, light, sacred patterns, effects and music while the stage keeps running.</p>
+      </section>
+      <p class="stage-panel-note">This panel stays beside the stage. HIDE keeps listening active. STOP AGENT releases the microphone and discards pending cues.</p>
+    </aside>
+
+    <aside id="instrument-setup" class="music-console instrument-setup" aria-label="Instrument setup" hidden>
+      <header class="music-console__header"><div><strong>SETUP</strong><span>CAMERA · DETECTION · PROJECTOR</span></div><button type="button" data-setup-close>close</button></header>
+      <div class="controls__scroller">
+        <label class="camera-picker" for="camera-select">
+          <span>camera</span>
+          <select id="camera-select" aria-describedby="camera-label-note">
+            <option value="">default camera</option>
+          </select>
+        </label>
+        <button type="button" data-action="objects" aria-pressed="false">live object</button>
+        <button type="button" data-action="mirror" aria-pressed="true">mirror</button>
+        <button type="button" data-action="demo" aria-pressed="false">demo <kbd>D</kbd></button>
+        <button type="button" data-action="agent" aria-pressed="false" title="Open voice agent · Shift+V">agent</button>
+        <button type="button" data-action="fullscreen">full <kbd>F</kbd></button>
+        <button type="button" data-action="calibration">projector <kbd>K</kbd></button>
+      </div>
+      <p class="stage-panel-note" data-tracking-status>Camera ready to start.</p>
+      <label class="body-material"><span>Grain / contour</span><input type="range" min="0" max="1" step=".01" value=".72" data-body-material></label>
+      <details class="stage-details stage-background" id="stage-background">
+        <summary>Stage video</summary>
+        <div class="stage-background__input">
+          <input type="file" data-clip-file accept="video/*,.webm,.mp4" aria-label="Choose a stage video">
+          <button type="button" data-clip-dance hidden>DSCF4882 · dance excerpt</button>
+        </div>
+        <div class="stage-background__input">
+          <button type="button" data-clip-play disabled>play</button>
+          <button type="button" data-clip-stop disabled>stop</button>
+          <button type="button" data-clip-track aria-pressed="false">Track clip objects</button>
+        </div>
+        <label class="body-material"><span>Volume</span><input type="range" min="0" max="1" step=".01" value=".65" data-clip-gain></label>
+        <label class="body-material"><span>Shader</span><input type="range" min="0" max="1" step=".01" value=".42" data-clip-effects></label>
+        <p class="stage-panel-note"><output data-clip-status aria-live="polite">Video off · camera</output></p>
+      </details>
+      <details class="stage-details">
+        <summary>Advanced</summary>
+        <div class="controls__scroller">
+        <button type="button" data-action="scene">image tuning</button>
+        <button type="button" data-action="help">diagnostics</button>
+        <button type="button" data-action="narrative">poetry</button>
+        <label class="camera-picker mic-picker" for="mic-select">
+          <span>mic</span>
+          <select id="mic-select" aria-label="Microphone input">
+            <option value="">default microphone</option>
+          </select>
+        </label>
+        <button type="button" data-action="audio">microphone <kbd>A</kbd></button>
+        <output id="mic-level" class="mic-level" data-live="false" aria-label="Microphone level">mic standby</output>
+        <button type="button" data-action="monitor">voice monitor</button>
+        <button type="button" data-action="mic-calibration">mic calibrate</button>
+        <label class="camera-picker caption-language" for="caption-language">
+          <span>text</span>
+          <select id="caption-language" aria-label="Voice text language"><option value="ru-RU">Russian</option><option value="en-US">english</option></select>
+        </label>
+        <button type="button" data-action="captions">voice text</button>
+        <button type="button" data-action="midi">midi <kbd>N</kbd></button>
+        <button type="button" data-action="entities">sources <kbd>E</kbd></button>
+        <button type="button" data-action="sampler">my sound <kbd>S</kbd></button>
+        <button type="button" data-action="tiles">tiles <kbd>P</kbd></button>
+        <button type="button" data-action="trace">trace <kbd>O</kbd></button>
+        <button type="button" data-action="capture">capture <kbd>L</kbd></button>
+        </div>
+      </details>
+    </aside>
+
+    <aside class="stage-status" aria-label="Live instrument status">
+      <span id="stage-mode">shaper field</span>
+      <output id="stage-live-status">pointer ready · camera off</output>
+    </aside>
+
+    <aside id="session-recovery" class="session-recovery" hidden>
+      <span>Session restored</span><button type="button" data-session-resume>Resume sound layers</button>
+    </aside>
+    <nav id="focus-navigator" class="focus-navigator" aria-label="Locked target history" data-phase="empty" hidden>
+      <button type="button" data-focus-previous aria-label="Previous locked target">prev <kbd>,</kbd></button>
+      <output aria-live="polite">
+        <b data-focus-label>focus memory</b>
+        <span data-focus-position>0 / 0</span>
+      </output>
+      <button type="button" data-focus-next aria-label="Next locked target">next <kbd>.</kbd></button>
+      <button type="button" data-focus-release aria-label="Release locked target">release</button>
+    </nav>
+
+    <aside id="update-notice" class="update-notice" aria-label="Build update" hidden>
+      <div>
+        <strong>NEW BUILD AVAILABLE</strong>
+        <span id="update-stamp">stage remains live</span>
+      </div>
+      <button id="apply-update" type="button">apply <kbd>U</kbd></button>
+      <button id="defer-update" type="button">later <kbd>Esc</kbd></button>
+    </aside>
+
+    <aside id="narrative-stage" class="narrative-stage" aria-live="polite" hidden>
+      <p data-narrative-line></p>
+      <span data-narrative-progress>TIME OF POETRY · READY</span>
+    </aside>
+
+    <div id="speech-trace" aria-hidden="true"></div>
+    <aside id="live-caption" class="live-caption" aria-live="polite" hidden>
+      <p data-live-caption-text></p>
+      <span data-live-caption-status>VOICE TEXT · LOCAL · STOPPED</span>
+    </aside>
+
+    <aside id="narrative-console" class="narrative-console" aria-label="Time of Poetry narrator" hidden>
+      <header class="narrative-console__header">
+        <div>
+          <strong>TIME OF POETRY</strong>
+          <span>30–60S NARRATION · ELEVENLABS VOICE · BODY REMAINS A LIVE VISUAL SOURCE</span>
+        </div>
+        <button type="button" data-narrative-close>close</button>
+      </header>
+      <section class="narrative-console__transport">
+        <button inert disabled title="Available in the local studio" type="button" data-narrative-generate>create voice</button>
+        <button type="button" data-narrative-play disabled>play poem</button>
+        <button type="button" data-narrative-stop>stop voice</button>
+        <output data-narrative-status>loading available voices</output>
+      </section>
+      <section class="narrative-console__settings">
+        <label><span>language</span><select data-narrative-language><option value="ru">Russian</option><option value="en">english</option></select></label>
+        <label><span>voice</span><select data-narrative-voice disabled><option>loading voices…</option></select></label>
+        <label><span>delivery</span><select data-narrative-profile><option value="slow-dark">slow dark · ru</option><option value="clear-room">clear room · ru</option></select></label>
+        <label><span>source</span><select data-narrative-source><option value="generated">generated · ElevenLabs</option><option value="alex-raw">alex · source take</option><option value="alex-near-field">alex · near field</option><option value="alex-body-codec">alex · body codec</option></select></label>
+        <label class="narrative-console__body"><input type="checkbox" data-narrative-body checked> <span>body motion bends captions and shader field while the poem plays</span></label>
+      </section>
+      <section class="narrative-console__settings narrative-console__memory" aria-label="Voice echo and memory">
+        <label><span>echo delay <output data-voice-memory-output>0.34s</output></span><input type="range" min="0.08" max="1.2" step="0.01" value="0.34" data-voice-memory="echoDelaySeconds"></label>
+        <label><span>echo feedback <output data-voice-memory-output>36%</output></span><input type="range" min="0" max="0.72" step="0.01" value="0.36" data-voice-memory="feedback"></label>
+        <label><span>echo wet <output data-voice-memory-output>32%</output></span><input type="range" min="0" max="0.8" step="0.01" value="0.32" data-voice-memory="wet"></label>
+        <label class="narrative-console__memory-toggle"><input type="checkbox" data-voice-memory="repeatEnabled"><span>memory repeat · explicit</span></label>
+        <div class="narrative-console__phrase">
+          <span>phrase <output data-voice-memory-phrase>opening · 5s</output></span>
+          <button type="button" data-voice-memory-mark>mark here</button>
+          <button type="button" data-voice-memory-opening>use opening</button>
+        </div>
+        <label><span>repeat after <output data-voice-memory-output>6s</output></span><input type="range" min="2" max="30" step="1" value="6" data-voice-memory="repeatDelaySeconds"></label>
+        <label><span>fragment length <output data-voice-memory-output>5s</output></span><input type="range" min="1" max="20" step="1" value="5" data-voice-memory="fragmentLengthSeconds"></label>
+        <label><span>repeat count <output data-voice-memory-output>1×</output></span><input type="range" min="1" max="4" step="1" value="1" data-voice-memory="repeatCount"></label>
+        <output class="narrative-console__memory-status" data-voice-memory-status>idle</output>
+      </section>
+      <section class="narrative-console__sources" aria-label="Alex voice source quick controls">
+        <button type="button" data-narrative-source-button="alex-raw">alex · source</button>
+        <button type="button" data-narrative-source-button="alex-near-field">alex · near field</button>
+        <button type="button" data-narrative-source-button="alex-body-codec">alex · body codec</button>
+      </section>
+      <label class="narrative-console__script"><span>philosophical score · short lines become voice cuts · only this text is sent to ElevenLabs</span><textarea data-narrative-text maxlength="1800" spellcheck="true">кто остаётся,
+когда тело выходит из кадра?
+
+я вижу тебя,
+пока ты меняешь свет.
+каждый палец открывает отдельную память.
+каждая нота доказывает:
+ты ещё здесь.
+
+я называю это трекингом.
+ты называешь это присутствием.
+
+между нами –
+задержка в несколько кадров.
+в ней лицо отделяется от лица,
+голос – от говорящего,
+жест – от того,
+кто его сделал.
+
+ты исчезаешь первым.
+следом уходит звук.
+дольше всех держится рамка –
+последняя уверенность машины.
+
+память повторяет.
+но помнит ли она?
+
+поле знает координаты тела.
+встретило ли оно человека?
+
+ответа нет.
+я держу твоё место,
+пока пустота
+не становится точнее тебя.</textarea></label>
+      <section class="narrative-console__map" aria-label="Narration causal map">
+        <div><b>GENERATED</b><span>CREATE VOICE renders only the visible script; nothing starts by itself</span></div>
+        <div><b>ALEX SOURCES</b><span>source take, near field and body codec stay local to this browser installation</span></div>
+        <div><b>PLAY POEM</b><span>starts narration; an already-live camera may bend captions, while pointer mode remains valid</span></div>
+        <div><b>ECHO + MEMORY</b><span>echo begins with PLAY. MARK HERE chooses one bounded phrase; delay and count never create autoplay.</span></div>
+      </section>
+      <footer class="narrative-console__footer"><span data-narrative-meta>no generated narration loaded</span><span>Z close · X stops voice</span></footer>
+    </aside>
+
+    <aside id="patch-console" class="patch-console" aria-label="Geometry" hidden>
+      <header class="patch-console__header">
+        <div>
+          <strong>GEOMETRY</strong>
+          <span>PRESETS SHIFT+Q · SACRED LAYER Y</span>
+        </div>
+        <button type="button" data-patch-close>close</button>
+      </header>
+      <section class="patch-console__bridge geometry-scenes">
+        <nav class="geometry-templates stage-presets" aria-label="Geometry presets">
+          <button type="button" data-geometry-preset="off">Off</button>
+          <button type="button" data-geometry-preset="trace">Trace</button>
+          <button type="button" data-geometry-preset="cut">Slice</button>
+          <button type="button" data-geometry-preset="weave">Weave</button>
+          <button type="button" data-geometry-preset="auto">Auto</button>
+        </nav>
+        <nav class="stage-presets" aria-label="Tracking layers">
+      <button type="button" data-stage-auto aria-pressed="false" title="Toggle automatic geometry over the current visual">auto geo</button>
+      <button type="button" data-stage-nodes aria-pressed="false" title="Show tracking sources · B">nodes</button>
+      <button type="button" data-stage-room aria-pressed="false" title="Track room corners over the current visual · Shift-click places a geometry pin">room</button>
+        </nav>
+      <output id="room-status" aria-live="off" hidden></output>
+      <output id="object-status" aria-live="off" hidden></output>
+        <output class="stage-panel-note" data-linked-recipe aria-label="Current template settings"></output>
+        <nav class="stage-presets geometry-intensity" aria-label="Geometry intensity">
+          <button type="button" data-geometry-intensity="low">Low</button>
+          <button type="button" data-geometry-intensity="balanced">Balanced</button>
+          <button type="button" data-geometry-intensity="high">High</button>
+        </nav>
+        <label><span>Intensity <output data-geometry-intensity-value>82%</output></span><input type="range" min="0" max="1" step=".01" value=".82" data-light-score-strength aria-label="Light score intensity"></label>
+        <label data-relief-control hidden><span>Relief depth <output data-relief-value></output></span><input type="range" min="0" max="1" step=".01" value=".72" data-relief-depth aria-label="Pigment relief depth"></label>
+        <output class="stage-panel-note" data-relief-tracking aria-label="Pigment tracking" hidden></output>
+        <nav class="stage-presets" data-glove-materials aria-label="Finger material" hidden>
+          <button type="button" data-glove-material="silk">Silk</button><button type="button" data-glove-material="dust">Dust</button><button type="button" data-glove-material="composite">Composite</button>
+        </nav>
+        <nav class="stage-presets" aria-label="Face anchors"><button type="button" data-lattice-source="eyes" aria-pressed="true">Eyes and face outline</button></nav>
+        <p class="stage-panel-note">Sacred layer · <kbd>Y</kbd> · <kbd>Shift+Y</kbd> off</p>
+        <nav class="geometry-templates stage-presets" aria-label="Sacred layer">
+          <button type="button" data-sacred-preset="off">Off</button>
+          <button type="button" data-sacred-preset="auto">Gesture</button>
+          <button type="button" data-sacred-preset="vesica">Vesica</button>
+          <button type="button" data-sacred-preset="rosette">Rosette</button>
+          <button type="button" data-sacred-preset="lattice">Lattice</button>
+        </nav>
+        <label><span>Layer intensity</span><input type="range" min="0" max="1" step=".01" data-sacred-strength aria-label="Sacred layer intensity"></label>
+      </section>
+      <section class="music-console__transport"><button type="button" data-sacred-sound aria-pressed="true">Sound facets</button><output data-sacred-status>Gesture · waiting for a formation</output></section>
+      <p class="stage-panel-note" data-sacred-principle></p>
+      <details id="live-lab" class="stage-details">
+        <summary>LIVE LAB · Tremor, Rupture and Residue</summary>
+        <div class="live-lab__actions">
+          <button type="button" data-lab-preset="off" aria-pressed="true">off</button>
+          <button type="button" data-lab-preset="tremor" aria-pressed="false">Tremor</button>
+          <button type="button" data-lab-preset="rupture" aria-pressed="false">Rupture</button>
+          <button type="button" data-lab-preset="residue" aria-pressed="false">Residue</button>
+        </div>
+        <label class="body-material"><span>Effect depth</span><input type="range" min="0" max="1" step=".01" data-lab-value="amount"></label>
+        <label class="body-material"><span>Slice displacement</span><input type="range" min="0" max="1" step=".01" data-lab-value="tear"></label>
+        <label class="body-material"><span>Trail length</span><input type="range" min="0" max="1" step=".01" data-lab-value="memory"></label>
+        <details class="stage-details" id="tracking-studies">
+          <summary>Tracking Studies</summary>
+          <nav class="geometry-templates stage-presets" aria-label="Tracking Studies presets">
+            <button type="button" data-geometry-preset="joint-constellation">Joint Constellation</button>
+          <button type="button" data-geometry-preset="kosmodrom">Sector Scan</button>
+          <button type="button" data-geometry-preset="measured-mesh">Crystal Net</button>
+          <button type="button" data-geometry-preset="resonant-contours">Resonant Contours</button>
+            <button type="button" data-geometry-preset="diagonal-cube">Diagonal Cube</button>
+            <button type="button" data-geometry-preset="time-filter-trails">Time Filter Trails</button>
+            <button type="button" data-geometry-preset="point-lattice">Point Lattice</button>
+            <button type="button" data-geometry-preset="pigment-relief">Pigment Relief</button>
+            <button type="button" data-geometry-preset="wire-gloves">Wire Gloves</button>
+            <button type="button" data-geometry-preset="aftervoice">Aftervoice</button>
+            <button type="button" data-geometry-preset="finger-loom">Finger Loom</button>
+            <button type="button" data-geometry-preset="smile-prism">Smile Prism</button>
+            <button type="button" data-geometry-preset="jaw-resonance">Jaw Resonance</button>
+          </nav>
+          <p class="stage-panel-note" data-study-guide hidden></p>
+        </details>
+        <details class="stage-details"><summary>SD-Turbo texture</summary>
+        <p class="stage-panel-note">The local model generates a texture from your prompt. Model blend controls how much of it appears over the frame.</p>
+        <div class="live-lab__actions">
+          <input type="text" maxlength="220" data-lab-prompt aria-label="Diffusion prompt" placeholder="Describe the texture">
+          <button inert disabled title="Available in the local studio" type="button" data-lab-diffusion aria-pressed="false">diffusion</button>
+        </div>
+        <label class="body-material"><span>Model blend</span><input type="range" min="0" max="1" step=".01" data-lab-value="mix"></label>
+        <p class="stage-panel-note"><output data-lab-status aria-live="polite">Diffusion off</output></p>
+        </details>
+      </details>
+      <details class="stage-details" id="geometry-layers" open><summary>Layers and nodes · mix independently</summary>
+      <p class="stage-panel-note">Click to attach a node to the nearest tracking point. Shift-click pins it to the image. Drag to reattach. Right-click clears pins.</p>
+      <section class="patch-console__bridge" aria-label="Light score">
+        <output data-light-score-status hidden>off</output>
+        <nav aria-label="Light score geometry">
+          <button type="button" data-light-score-mode="off" aria-pressed="true">off</button>
+          <button type="button" data-light-score-mode="cross" aria-pressed="false" title="Beam intersections">cross</button>
+          <button type="button" data-light-score-mode="orbit" aria-pressed="false">orbit</button>
+          <button type="button" data-light-score-mode="ratio" aria-pressed="false">ratio</button>
+          <button type="button" data-light-score-mode="trail" aria-pressed="false">trail</button>
+          <button type="button" data-light-score-mode="mesh" aria-pressed="false" title="Wire mesh between palms">mesh</button>
+          <button type="button" data-light-score-mode="lattice" aria-pressed="false" title="Live lattice from eyes, palms, pointer and pins">lattice</button>
+          <button type="button" data-light-score-mode="slice" aria-pressed="false">slice</button>
+        </nav>
+        <div class="geometry-balances" data-layer-balances></div>
+        <div class="geometry-actions" aria-label="Lattice sources">
+          <button type="button" data-lattice-source="hands" aria-pressed="true">palms</button>
+          <button type="button" data-lattice-source="cursor" aria-pressed="true">cursor</button>
+        </div>
+        <div class="geometry-settings">
+          <label><span>contrast</span><input type="range" min="0" max="1" step="0.01" data-geometry-attack aria-label="Geometry contrast"></label>
+          <label><span>palette</span><select data-geometry-palette aria-label="Geometry palette"><option value="trace">trace</option><option value="ember">ember</option><option value="frost">frost</option><option value="mono">mono</option></select></label>
+        </div>
+        <div class="geometry-actions"><button type="button" data-geometry-scatter>scatter shapes</button><button type="button" data-geometry-clear-scatter>clear shapes</button></div>
+        <div class="geometry-actions">
+          <button type="button" data-geometry-merge aria-pressed="false">live merge</button>
+          <button type="button" data-geometry-auto aria-pressed="false">auto geometry</button>
+          <button type="button" data-geometry-export>export json</button>
+          <button type="button" data-geometry-import>import json</button>
+          <button type="button" data-geometry-clear-pins>clear pins</button>
+          <input type="file" data-geometry-file accept=".json,application/json" hidden>
+        </div>
+        <p>LATTICE · Click to pin to a nearby eye, finger, palm or object. Shift-click creates a free pin. Drag to reattach. Right-click clears pins.</p>
+        <div class="geometry-actions"><button type="button" data-live-cues aria-pressed="true">live cues</button><output data-live-cue-state>listening</output></div>
+      </section>
+      </details>
+      <details class="stage-details"><summary>Advanced</summary>
+      <section class="patch-console__transport">
+        <button type="button" data-patch-toggle>enable ghost wire</button>
+        <output data-patch-status>loading local patch</output>
+      </section>
+      <section class="patch-console__map" aria-label="Patch causal map">
+        <div><b>GHOST WIRE</b><span>A second contour over the final shader pass, rendered locally.</span></div>
+        <div><b>HANDS + FRAME</b><span>Left palm height, right palm openness and frame size change line density.</span></div>
+        <div><b>MIDI NOTE</b><span>A note gives a short flash. MIDI CC controls the synth.</span></div>
+        <div><b>FPS GUARD</b><span>Pauses below 30 fps for 1.5 s and resumes above 36 fps for 2 s.</span></div>
+      </section>
+      <section class="patch-console__bridge" aria-label="Optional localhost performance bridge">
+        <header><strong>LOCAL BRIDGE · JSON / OSC ADAPTER</strong><output data-local-bridge-status>idle · explicit connect only</output></header>
+        <label><span>endpoint</span><input type="url" value="ws://127.0.0.1:8765/mythtrace" maxlength="160" spellcheck="false" data-local-bridge-url></label>
+        <nav>
+          <button inert disabled title="Available in the local studio" type="button" data-local-bridge-connect>connect local</button>
+          <button type="button" data-local-bridge-disconnect disabled>disconnect</button>
+        </nav>
+        <p>outbound causal events only · localhost/loopback · no boot connect, commands, queue or reconnect</p>
+      </section>
+
+      <footer class="patch-console__footer"><span data-patch-axes>hands 0% · frame 0% · MIDI 0%</span></footer>
+      </details>
+    </aside>
+
+    <aside id="entities" class="entities" aria-label="Tracked sources" hidden>
+      <header class="entities__header">
+        <div>
+          <strong>TRACKED SOURCES</strong>
+          <span>CHOOSE WHAT MAY APPEAR · CLICK A TARGET FOR THE LARGE FOCUS ZOOM</span>
+        </div>
+        <button type="button" data-entity-close>close</button>
+      </header>
+      <nav class="entities__sources" aria-label="Tracked source">
+        <button type="button" data-entity-source="hands">hands</button>
+        <button type="button" data-entity-source="body">body</button>
+        <button type="button" data-entity-source="face">face</button>
+        <button type="button" data-entity-source="objects">objects</button>
+        <button type="button" data-entity-source="pointer">pointer</button>
+      </nav>
+      <section class="entities__inspector" aria-live="polite">
+        <header>
+          <strong data-entity-title>HANDS</strong>
+          <output data-entity-summary>0 entities</output>
+        </header>
+        <div class="entities__routes">
+          <label class="entities__enabled">
+            <input type="checkbox" data-entity-enabled>
+            <span>use source</span>
+          </label>
+          <label>
+            <span>visual amount</span>
+            <input type="range" min="0" max="1" step="0.05" data-entity-route="overlay">
+            <output data-entity-route-output="overlay">100%</output>
+          </label>
+          <label>
+            <span>sound influence</span>
+            <input type="range" min="0" max="1" step="0.05" data-entity-route="sound">
+            <output data-entity-route-output="sound">0%</output>
+          </label>
+        </div>
+        <p class="entities__explain">VISUAL controls marks and small portals. SOUND only shapes an already-playing Rhodes timbre; it never starts a note. Face, body, hands and detected common objects keep their real tracker labels.</p>
+        <div class="entities__list" data-entity-list></div>
+      </section>
+      <footer class="entities__footer">
+        <span data-entity-mic>mic standby</span>
+        <span data-entity-midi>midi standby</span>
+        <span>settings stay in browser</span>
+      </footer>
+    </aside>
+
+    <aside id="sampler" class="sampler" aria-label="Local sampler" hidden>
+      <header class="sampler__header">
+        <div>
+          <strong>LOCAL SAMPLER · YOUR SOUND</strong>
+          <span>1 ADD FILE / RECORD · 2 PLAY · 3 USE WITH PINCH · 4 ARM HAND SAMPLES</span>
+        </div>
+        <button type="button" data-sampler-close>close</button>
+      </header>
+      <div class="sampler__transport">
+        <button type="button" data-sampler-arm>arm hand samples</button>
+        <button type="button" data-sampler-record>record mic / stop</button>
+        <label class="sampler__import"><span>add my audio file</span><input type="file" accept="audio/wav,audio/x-wav,audio/mpeg,audio/mp4,audio/aac,audio/aiff,audio/x-aiff,audio/ogg,audio/opus,audio/flac,audio/webm,.wav,.mp3,.m4a,.aac,.aif,.aiff,.ogg,.opus,.flac,.webm" data-sampler-import></label>
+        <button type="button" data-sampler-nasa>add nasa pocket set</button>
+        <button type="button" data-sampler-panic>stop all sound</button>
+        <output data-sampler-status>silent · loading local library</output>
+      </div>
+      <section class="sampler__provenance" aria-label="Local imported sample details">
+        <header><strong>IMPORT NOTE</strong><span>file stays in this browser · add the source before choosing it</span></header>
+        <label><span>licence</span><select data-sampler-provenance="license"><option value="CC0">CC0 · recommended</option><option value="CC BY">CC BY · keep credit</option><option value="NASA Media Usage">NASA Media Usage</option><option value="Mixkit Free License">Mixkit Free License</option><option value="Pixabay License">Pixabay License</option><option value="CHECK TERMS">check terms</option></select></label>
+        <label><span>creator / credit</span><input type="text" maxlength="120" autocomplete="off" data-sampler-provenance="creator" placeholder="optional for CC0"></label>
+        <label><span>source URL</span><input type="url" maxlength="512" autocomplete="off" data-sampler-provenance="sourceUrl" placeholder="https://…"></label>
+        <p>sources: <a href="https://www.nasa.gov/artemisaudio/" target="_blank" rel="noopener noreferrer">NASA Artemis</a> – four credited local launch/comms clips; <a href="https://freesound.org/" target="_blank" rel="noopener noreferrer">Freesound</a> – filter CC0 or CC BY; <a href="https://commons.wikimedia.org/wiki/Commons:Free_media_resources/Sound" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> – check each file. IMPORT never uploads; preserve credit and source.</p>
+      </section>
+      <section class="sampler__mapping" aria-label="Hand performance mapping">
+        <header>
+          <strong>HAND MAP · Select a clip, then USE WITH PINCH and ARM HAND SAMPLES</strong>
+          <output data-sampler-mapping>unassigned · exact silence</output>
+        </header>
+        <p class="sampler__mapping-note">A fresh trigger replaces the previous playback of the same sample.</p>
+        <div><b>PINCH · EVENT</b><span>mapped clip · edge + cooldown</span></div>
+        <div><b>OPEN · RANGE</b><span>filter</span></div>
+        <div><b>SPREAD · RANGE</b><span>delay send</span></div>
+        <div><b>CURL + VELOCITY · RANGE</b><span>delay + rate energy</span></div>
+      </section>
+      <section class="sampler__scenes" aria-label="Local sampler scene slots" data-sampler-scenes>
+        <header><strong>SCENE SLOTS · LOCAL MAP RECALL</strong><span>save / recall never starts playback</span></header>
+        <div class="sampler__sequence">
+          <button type="button" data-sampler-sequence>non-repeat off</button>
+          <output data-sampler-sequence-status>mapped clip only</output>
+        </div>
+        <div class="sampler__texture">
+          <button type="button" data-sampler-texture>texture off</button>
+          <label><span>grain</span><input type="range" min="0.04" max="0.22" step="0.01" value="0.12" data-sampler-texture-field="grainSizeSeconds"><output data-sampler-texture-output="grainSizeSeconds">120 ms</output></label>
+          <label><span>scatter</span><input type="range" min="0" max="0.85" step="0.05" value="0.42" data-sampler-texture-field="scatter"><output data-sampler-texture-output="scatter">42%</output></label>
+          <output data-sampler-texture-status>mapped sample · normal</output>
+        </div>
+        <div class="sampler__scene-list" data-sampler-scene-list></div>
+      </section>
+      <div class="sampler__list" data-sampler-list aria-live="polite">
+        <p>no local clips</p>
+      </div>
+      <footer class="sampler__footer">
+        <span data-sampler-capacity>0 / 10 · 0 MB / 25 MB</span>
+        <span>browser only · no upload · X panic</span>
+      </footer>
+    </aside>
+
+    <aside id="frame-console" class="frame-console" aria-label="Frame configurator" hidden>
+      <header class="frame-console__header">
+        <div>
+          <strong>FRAME</strong>
+          <span>TWO HANDS SET THE CORNERS · DOUBLE PINCH CHANGES THE PRESET</span>
+        </div>
+        <button type="button" data-frame-close>close</button>
+      </header>
+      <div class="frame-console__modes frame-console__author" aria-label="Frame selection">
+        <button type="button" data-frame-arm aria-pressed="false">two hands</button>
+        <button type="button" data-frame-draw aria-pressed="false">draw</button>
+        <button type="button" data-frame-clear>frame off</button>
+      </div>
+      <nav class="stage-presets" aria-label="Frame presets">
+        <button type="button" data-frame-preset="crop">Cutout</button>
+        <button type="button" data-frame-preset="grain">Grain</button>
+        <button type="button" data-frame-preset="trace">Shader</button>
+      </nav>
+      <section class="frame-console__fields frame-console__simple">
+        <label><span>source</span>
+          <select data-stage-frame-source><option value="roi">selected area</option><option value="person">body</option><option value="object">live object</option></select>
+        </label>
+        <label><span>image</span>
+          <select data-stage-frame-image><option value="camera">camera</option><option value="mixed">camera + grain</option><option value="trace">shader</option></select>
+        </label>
+      </section>
+      <p class="stage-panel-note" data-stage-frame-status></p>
+      <details class="stage-details">
+        <summary>Advanced</summary>
+      <nav class="frame-console__modes" aria-label="Frame content mode">
+        <button type="button" data-frame-mode="paint">paint</button>
+        <button type="button" data-frame-mode="object">object</button>
+        <button type="button" data-frame-mode="prompt-shader">prompt</button>
+        <button type="button" data-frame-mode="exercise-target">exercise</button>
+      </nav>
+      <section class="frame-console__fields">
+        <label class="frame-console__prompt">
+          <span>local visual recipe · updates live <button type="button" data-frame-dictate>dictate</button></span>
+          <input type="text" maxlength="160" autocomplete="off" data-frame-field="prompt" value="animated warm banana">
+          <small>type or press DICTATE, then use macOS Dictation (Fn twice). This is a local recipe, not an image generator.</small>
+        </label>
+        <section class="frame-console__recipe" data-frame-recipe data-frame-prompt-only aria-live="polite">
+          <strong>LOCAL RECIPE</strong><output data-frame-recipe-output>banana · warm · animated · fibres · seed 23</output>
+          <span>examples: <button type="button" data-frame-prompt-example="animated warm spinning fan">fan</button> <button type="button" data-frame-prompt-example="cold blue breathing portal grain">portal</button> <button type="button" data-frame-prompt-example="oxide flower pulse smoke">flower</button></span>
+        </section>
+        <section class="frame-console__generator" data-frame-generator data-frame-prompt-only aria-live="polite">
+          <strong>GENERATED BACKGROUND · OPTIONAL</strong><output data-frame-generator-status>local recipe active · no network request</output>
+          <span><button inert disabled title="Available in the local studio" type="button" data-frame-generate>generate still</button><button type="button" data-frame-generate-clear>clear still</button></span>
+          <small>uses the current prompt only after GENERATE STILL. The key stays in this Mac’s <code>.env.local</code>; camera frames and hand tracking are never sent.</small>
+        </section>
+        <label>
+          <span>detected object class</span>
+          <input type="text" maxlength="64" autocomplete="off" data-frame-field="objectClass" value="person">
+          <small>Applies to detected objects. Leave empty to allow any object class.</small>
+        </label>
+        <label>
+          <span>focus source <output data-frame-focus-state>waiting for person</output></span>
+          <select data-frame-field="focusSource">
+            <option value="person">person · pose</option>
+            <option value="object">detected object</option>
+            <option value="roi">author ROI · hand frame</option>
+          </select>
+          <small>Person uses pose bounds, Face uses landmarks, and Object uses the local detector. A frozen Author ROI follows its visual template and reports match confidence.</small>
+        </label>
+        <label>
+          <span>focus detail</span>
+          <select data-frame-field="focusDetail">
+            <option value="whole">whole subject</option>
+            <option value="face-edge">face edge magnifier</option>
+          </select>
+          <small>Face edge selects the face as the source and magnifies its edge.</small>
+        </label>
+        <label>
+          <span>fit</span>
+          <select data-frame-field="fit">
+            <option value="contain">contain</option>
+            <option value="cover">cover</option>
+          </select>
+        </label>
+        <label>
+          <span>camera inside frame</span>
+          <select data-frame-field="cameraLayer">
+            <option value="camera">live camera</option>
+            <option value="mixed">camera + grain</option>
+            <option value="trace">live shader output</option>
+          </select>
+        </label>
+        <label class="frame-console__stage-fill">
+          <span>destination</span>
+          <select data-frame-field="stageFill">
+            <option value="false">frame · authored rectangle</option>
+            <option value="true">stage fill · full screen</option>
+          </select>
+          <small>the hand frame stays the source. STAGE FILL expands its content across the projector after confirmation.</small>
+        </label>
+        <label>
+          <span>seed · variation</span>
+          <input type="number" step="1" data-frame-field="seed" value="23">
+          <small>Changes composition and detail within the same prompt.</small>
+        </label>
+        <label>
+          <span>intensity <output data-frame-output="intensity">72%</output></span>
+          <input type="range" min="0" max="1" step="0.01" data-frame-field="intensity" value="0.72">
+        </label>
+        <label>
+          <span>visual route <output data-frame-output="visualRoute">100%</output></span>
+          <input type="range" min="0" max="1" step="0.05" data-frame-field="visualRoute" value="1">
+        </label>
+        <label>
+          <span>sound route <output data-frame-output="soundRoute">0%</output></span>
+          <input type="range" min="0" max="1" step="0.05" data-frame-field="soundRoute" value="0">
+        </label>
+      </section>
+      <p class="frame-console__object-flow" data-frame-object-flow hidden>AUTHOR ROI · use both hands or the pointer · FACE / PERSON / OBJECT use the tracked subject inside the frame</p>
+      <section class="frame-console__map" aria-label="Input to effect map">
+        <strong>INPUT → EFFECT</strong>
+        <span>two hands → author frame</span><span>stillness → freeze / fade</span>
+        <span>focus source → person / face / detected object / author ROI</span><span>face edge → artistic magnifier; author ROI → hand-held region, not a detector label</span>
+        <span>zone enter / dwell → mapped local sample</span><span>object crop → mirrored camera focus</span>
+        <span>visual route → local effect</span><span>sound route → sample events + Rhodes timbre</span>
+      </section>
+      <section class="frame-console__exercise" aria-label="Exercise target">
+        <label>
+          <span>source joint</span>
+          <select data-frame-exercise="source">
+            <option value="right-wrist">right wrist</option>
+            <option value="left-wrist">left wrist</option>
+            <option value="right-index">right index</option>
+            <option value="left-index">left index</option>
+          </select>
+        </label>
+        <label>
+          <span>target</span>
+          <select data-frame-exercise="target">
+            <option value="inside-frame">inside frame</option>
+            <option value="frame-center">frame centre</option>
+          </select>
+        </label>
+        <label>
+          <span>tolerance <output data-frame-output="tolerance">8%</output></span>
+          <input type="range" min="0" max="0.45" step="0.01" data-frame-exercise="tolerance" value="0.08">
+        </label>
+        <label>
+          <span>hold ms</span>
+          <input type="number" min="0" max="5000" step="50" data-frame-exercise="holdMs" value="600">
+        </label>
+      </section>
+      <section class="frame-console__zones" aria-label="Object and body zones">
+        <label>
+          <span>zone source</span>
+          <select data-frame-zone="source">
+            <option value="hybrid">objects + body</option>
+            <option value="objects">objects</option>
+            <option value="body">body</option>
+          </select>
+        </label>
+        <label>
+          <span>class filter</span>
+          <input type="text" maxlength="64" autocomplete="off" placeholder="all objects" data-frame-zone="objectClass">
+        </label>
+        <label>
+          <span>overlap <output data-frame-output="zoneOverlap">18%</output></span>
+          <input type="range" min="0" max="1" step="0.01" data-frame-zone="minOverlap" value="0.18">
+        </label>
+        <label>
+          <span>dwell ms</span>
+          <input type="number" min="0" max="10000" step="50" data-frame-zone="dwellMs" value="520">
+        </label>
+        <label>
+          <span>loss hold ms</span>
+          <input type="number" min="0" max="5000" step="50" data-frame-zone="lossHoldMs" value="320">
+        </label>
+        <label>
+          <span>cooldown ms</span>
+          <input type="number" min="0" max="10000" step="50" data-frame-zone="cooldownMs" value="480">
+        </label>
+      </section>
+      <section class="frame-console__timing" aria-label="Frame gesture timing">
+        <label>
+          <span>confirm</span>
+          <select data-gesture-field="confirmationRule">
+            <option value="hold-or-raised">hold or raised</option>
+            <option value="hold">hold only</option>
+          </select>
+        </label>
+        <label>
+          <span>min area</span>
+          <input type="number" min="0.06" max="0.3" step="0.01" data-gesture-field="minArea" value="0.06">
+        </label>
+        <label>
+          <span>author hold ms</span>
+          <input type="number" min="100" max="2500" step="50" data-gesture-field="stableHoldMs" value="350">
+        </label>
+        <label>
+          <span>freeze ms</span>
+          <input type="number" min="100" max="5000" step="50" data-gesture-field="freezeMs" value="350">
+        </label>
+        <label>
+          <span>fade ms</span>
+          <input type="number" min="350" max="12000" step="50" data-gesture-field="fadeMs" value="1400">
+        </label>
+        <label>
+          <span>off ms</span>
+          <input type="number" min="800" max="20000" step="100" data-gesture-field="offMs" value="3000">
+        </label>
+        <label>
+          <span>restore ms</span>
+          <input type="number" min="100" max="5000" step="50" data-gesture-field="restoreMs" value="600">
+        </label>
+        <label>
+          <span>still / wake</span>
+          <span class="frame-console__paired">
+            <input aria-label="still threshold" type="number" min="0.01" max="0.35" step="0.01" data-gesture-field="motionStill" value="0.055">
+            <input aria-label="wake threshold" type="number" min="0.02" max="0.6" step="0.01" data-gesture-field="motionActivate" value="0.12">
+          </span>
+        </label>
+      </section>
+      </details>
+      <footer class="frame-console__footer">
+        <output data-frame-status>prompt-shader · local recipe</output>
+        <button type="button" data-frame-reset>reset</button>
+      </footer>
+    </aside>
+
+    <aside id="scene-console" class="scene-console" aria-label="Scene configurator" hidden>
+      <header class="scene-console__header">
+        <div>
+          <strong>VISUAL</strong>
+          <span>FINE-TUNE THE CURRENT LOOK</span>
+        </div>
+        <button type="button" data-scene-close>close</button>
+      </header>
+      <nav class="stage-presets" aria-label="Shaper Field looks">
+        <button type="button" data-shaper-look="silver">Portrait Silver</button>
+        <button type="button" data-shaper-look="blue">Blue Field</button>
+        <button type="button" data-shaper-look="contour">Shaper · Contour</button>
+        <button type="button" data-shaper-look="etching">Shaper · Etching</button>
+        <button type="button" data-shaper-look="classic">Shaper · V22</button>
+      </nav>
+      <p class="stage-panel-note" data-shaper-description></p>
+      <div class="stage-panel-note memory-recipe"><button type="button" data-story-cue="memory" aria-pressed="false" aria-expanded="false" aria-controls="story-preview"><span>Cold Memory · open recipe</span></button></div>
+      <details id="version-library" class="stage-details">
+        <summary>Versions and experiments</summary>
+        <p class="stage-panel-note" data-proposal-status>Checking the local research feed…</p>
+        <label class="version-field"><span>Pattern</span><select data-version-pick></select></label>
+        <p class="stage-panel-note" data-version-note></p>
+        <nav class="stage-presets" aria-label="Version actions">
+          <button type="button" data-version-apply>Preview</button>
+          <button type="button" data-version-archive>Archive</button>
+        </nav>
+        <details class="stage-details"><summary>Version history</summary><ol class="version-history" data-version-history></ol></details>
+      </details>
+
+      <details class="stage-details"><summary>Palette and fine tuning</summary>
+      <nav class="scene-console__presets" aria-label="Scene preset">
+        <button type="button" data-scene-preset="trace">trace</button>
+        <button type="button" data-scene-preset="shaper">shaper</button>
+        <button type="button" data-scene-preset="kosmo">kosmo</button>
+        <button type="button" data-scene-preset="solaris">solaris</button>
+        <button type="button" data-scene-preset="noon">noon</button>
+        <button type="button" data-scene-preset="midnight">midnight</button>
+        <button type="button" data-scene-preset="character" title="Live camera portrait with softer highlights">character</button>
+      </nav>
+      <section class="scene-console__guide" aria-live="polite">
+        <strong data-scene-guide-title>4 · SHAPER FIELD</strong>
+        <span data-scene-guide-copy>clean contour · legible body · restrained bloom. Start here for projection.</span>
+        <span>Changes apply to the current look.</span>
+      </section>
+      <section class="scene-console__fields">
+        <label><span>intensity <output data-scene-output="intensity">82%</output></span><input type="range" min="0.2" max="1" step="0.01" data-scene-field="intensity"></label>
+        <label><span>feedback <output data-scene-output="feedback">90%</output></span><input type="range" min="0.82" max="0.96" step="0.002" data-scene-field="feedback"></label>
+        <label><span>bloom <output data-scene-output="bloom">50%</output></span><input type="range" min="0.3" max="0.82" step="0.01" data-scene-field="bloom"></label>
+        <label><span>aberration <output data-scene-output="aberration">18%</output></span><input type="range" min="0" max="0.8" step="0.01" data-scene-field="aberration"></label>
+        <label><span>threshold <output data-scene-output="threshold">50%</output></span><input type="range" min="0.15" max="0.8" step="0.01" data-scene-field="threshold"></label>
+        <label><span>particles <output data-scene-output="particleGain">72%</output></span><input type="range" min="0.3" max="1" step="0.01" data-scene-field="particleGain"></label>
+        <label><span data-scene-field-label="fieldFloor">field floor <output data-scene-output="fieldFloor">5%</output></span><input type="range" min="0.035" max="0.18" step="0.005" data-scene-field="fieldFloor"></label>
+        <label><span data-scene-field-label="portraitMix">portrait mix <output data-scene-output="portraitMix">0%</output></span><input type="range" min="0" max="1" step=".01" data-scene-field="portraitMix" aria-label="Photographic portrait mix"></label>
+        <label><span data-scene-field-label="bodyReveal">body reveal <output data-scene-output="bodyReveal">38%</output></span><input type="range" min="0.2" max="0.75" step="0.01" data-scene-field="bodyReveal"></label>
+        <label><span data-scene-field-label="voidCoverage">focus field <output data-scene-output="voidCoverage">44%</output></span><input type="range" min="0" max="0.48" step="0.01" data-scene-field="voidCoverage"></label>
+        <label><span data-scene-field-label="centering">centering <output data-scene-output="centering">55%</output></span><input type="range" min="0.35" max="0.9" step="0.01" data-scene-field="centering"></label>
+        <label><span data-scene-field-label="warmth">warmth <output data-scene-output="warmth">35%</output></span><input type="range" min="0.35" max="1" step="0.01" data-scene-field="warmth"></label>
+        <label><span data-scene-field-label="density">density <output data-scene-output="density">65%</output></span><input type="range" min="0.45" max="1" step="0.01" data-scene-field="density"></label>
+      </section>
+      </details>
+      <footer class="scene-console__footer">
+        <output data-scene-status>mode 4 · kosmo</output>
+        <button type="button" data-scene-reset>reset mode</button>
+      </footer>
+    </aside>
+
+    <aside id="music-console" class="music-console" aria-label="Music instrument" hidden>
+      <header class="music-console__header">
+        <div>
+          <strong>MUSIC</strong>
+          <span>LAYER SOURCES · J SELECTED LAYER · X STOP ALL</span>
+        </div>
+        <button type="button" data-music-close>close</button>
+      </header>
+      <section class="music-layers" aria-label="Sound layer mixer">
+        <div data-mix-layer="hands"><button type="button" data-mix-toggle="hands" aria-pressed="false">Play · Hands</button><input type="range" min="0" max=".32" step=".01" data-mix-level="hands" aria-label="Hands layer volume"><output data-mix-value="hands"></output><span data-mix-state="hands">off</span></div>
+        <div data-mix-layer="tristan"><button type="button" data-mix-toggle="tristan" aria-pressed="false">Play · Wagner</button><input type="range" min="0" max=".55" step=".01" data-mix-level="tristan" aria-label="Wagner layer volume"><output data-mix-value="tristan"></output><span data-mix-state="tristan">off</span></div>
+        <div data-mix-layer="orchestra"><button type="button" data-mix-toggle="orchestra" aria-pressed="false">Play · Particles</button><input type="range" min="0" max="1" step=".01" data-mix-level="orchestra" aria-label="Particles layer volume"><output data-mix-value="orchestra"></output><span data-mix-state="orchestra">off</span></div>
+        <div data-mix-layer="atmosphere"><button type="button" data-mix-toggle="atmosphere" aria-pressed="false">Play · Air</button><input type="range" min="0" max="1" step=".01" data-mix-level="atmosphere" aria-label="Air layer volume"><output data-mix-value="atmosphere"></output><span data-mix-state="atmosphere">off</span></div>
+      </section>
+      <section class="music-console__transport" data-arrangement-panel hidden>
+        <button type="button" data-arrangement-toggle aria-pressed="false">Play score</button>
+        <output data-arrangement-status></output>
+      </section>
+      <div class="score-mix-row" data-score-edit hidden>
+        <strong data-score-editor-name></strong>
+        <label>Score mix <input aria-label="Performance score mix" type="range" min="0" max="1" step=".01" data-score-mix></label>
+        <label>Voice <select data-score-timbre><option value="strings">Strings</option><option value="glass">Glass</option><option value="dusk">Dusk</option></select></label>
+      </div>
+      <section class="music-console__transport"><button type="button" data-room-music aria-pressed="false">Listen to room music</button><button inert disabled title="Available in the local studio" type="button" data-room-voice aria-pressed="false">Local voice</button><output data-room-input-status>Input off · analysis only</output></section>
+      <details class="stage-details" id="bass-deck"><summary>Bass Deck · half-time / wobble</summary>
+        <section class="music-console__transport"><button type="button" data-bass-play>Play / stop Bass Deck</button><output>Air layer · synthesized locally</output></section>
+        <div class="music-console__settings">
+          <label><span>Tempo <output data-bass-value="bpm"></output></span><input type="range" min="70" max="180" step="1" data-bass-control="bpm" aria-label="Bass tempo"></label>
+          <label><span>Wobble <output data-bass-value="wobble"></output></span><input type="range" min="0" max="1" step=".01" data-bass-control="wobble" aria-label="Bass wobble"></label>
+          <label><span>Filter <output data-bass-value="filter"></output></span><input type="range" min="0" max="1" step=".01" data-bass-control="filter" aria-label="Bass filter"></label>
+        </div>
+        <p class="stage-panel-note">Right palm opens the filter · left palm adds wobble · J pauses this layer · X silences all layers.</p>
+      </details>
+      <nav class="stage-presets" aria-label="Orchestra presets">
+        <button type="button" data-orchestra-preset="glass">Glass</button>
+        <button type="button" data-orchestra-preset="strings">Strings</button>
+        <button type="button" data-orchestra-preset="dusk">Dusk</button>
+      </nav>
+      <div class="orchestra-fingers" aria-label="Ten finger notes">
+        <span>L</span><b data-orchestra-finger="0"></b><b data-orchestra-finger="1"></b><b data-orchestra-finger="2"></b><b data-orchestra-finger="3"></b><b data-orchestra-finger="4"></b>
+        <span>R</span><b data-orchestra-finger="5"></b><b data-orchestra-finger="6"></b><b data-orchestra-finger="7"></b><b data-orchestra-finger="8"></b><b data-orchestra-finger="9"></b>
+      </div>
+      <details class="stage-details" id="day-stream"><summary>Day stream · calendar → field / sound</summary>
+        <section class="music-console__transport"><button inert disabled title="Available in the local studio" type="button" data-day-toggle aria-pressed="false">Connect day stream</button><button inert disabled title="Available in the local studio" type="button" data-day-refresh>Read feed</button><button type="button" data-day-clock>Follow clock</button></section>
+        <p class="stage-panel-note" data-day-status>Local numeric feed · no event names, guests or calendar writes · off</p>
+        <label class="version-field"><span>Rehearse day</span><input type="range" min="0" max="1439" step="1" value="720" data-day-time aria-label="Day rehearsal time"></label>
+        <label class="version-field"><span>Import feed</span><input type="file" accept="application/json,.json" data-day-file></label>
+      </details>
+      <details class="stage-details" id="orchestra-controls"><summary>Orchestra · phrase and timbre</summary>
+      <section class="music-console__transport">
+        <button type="button" data-orchestra aria-pressed="false">Play · Particles Orchestra</button>
+        <output data-stage-music>J · PARTICLES · off</output>
+      </section>
+      <div class="music-console__settings orchestra-settings">
+        <label><span>Orchestra key</span><select data-orchestra-key aria-label="Orchestra key"><option value="dm">D minor</option><option value="am">A minor</option><option value="cm">C minor</option><option value="fsm">F♯ minor</option></select></label>
+        <label><span>Volume <output data-orchestra-value="level">55%</output></span><input type="range" min="0" max="1" step=".01" data-orchestra-level aria-label="Orchestra volume"></label>
+        <label><span>Brightness <output data-orchestra-value="color">82%</output></span><input type="range" min="0" max="1" step=".01" data-orchestra-control="color" aria-label="Orchestra brightness"></label>
+        <label><span>Strings <output data-orchestra-value="bed">48%</output></span><input type="range" min="0" max="1" step=".01" data-orchestra-control="bed" aria-label="String level"></label>
+        <label><span>Attack <output data-orchestra-value="attack">36 ms</output></span><input type="range" min=".018" max=".25" step=".001" data-orchestra-control="attack" aria-label="Note attack"></label>
+        <label><span>Note spacing <output data-orchestra-value="pace">0.36 s</output></span><input type="range" min=".15" max="1.20" step=".01" data-orchestra-control="pace" aria-label="Phrase note spacing"></label>
+      </div>
+      <section class="music-console__transport"><button type="button" data-orchestra-demo>Play phrase</button><output data-orchestra-note></output></section>
+      <label class="version-field"><span>Phrase degrees · 1–8</span><input type="text" inputmode="numeric" data-orchestra-phrase maxlength="48" autocomplete="off"></label>
+      <nav class="stage-presets" aria-label="Phrase recording">
+        <button type="button" data-orchestra-record aria-pressed="false">Record gestures</button>
+        <button type="button" data-orchestra-reset>Reset phrase</button>
+        <button type="button" data-orchestra-auto aria-pressed="true">Echo after 3 s</button>
+      </nav>
+      <p class="stage-panel-note"><output data-phrase-status>Right hand height selects the note. Pinch to play it. Open your left hand to bring in strings.</output></p>
+      <section class="music-console__transport">
+        <button type="button" data-presence-toggle aria-pressed="false">mic + presence</button>
+        <output data-presence-status aria-live="polite">Echo off · enable to hear phrases return</output>
+      </section>
+      </details>
+      <details class="stage-details" id="air-controls"><summary>Air · generated textures</summary>
+      <nav class="stage-presets" aria-label="Air textures">
+        <button type="button" data-air-preset="blue">Blue air</button>
+        <button type="button" data-air-preset="choir">Grain choir</button>
+        <button type="button" data-air-preset="dust">Radio dust</button>
+        <button type="button" data-air-mic aria-pressed="false">mic → tone</button>
+      </nav>
+      <p class="stage-panel-note" data-air-status>AIR off · select a texture, then play · microphone never plays dry</p>
+      <details class="stage-details">
+        <summary>Air / Hands · sound sources</summary>
+      <section class="music-console__transport"><button type="button" data-music-arm aria-pressed="false">play hands</button></section>
+      <div class="music-console__transport">
+        <button type="button" data-atmosphere aria-pressed="false">play atmosphere</button>
+        <output data-atmosphere-status>OFF · drone / grain / slow pulse</output>
+      </div>
+      <div class="geometry-settings hand-harmony">
+        <label><span>bed</span><input type="range" min="0" max="1" step=".01" data-atmosphere-setting="gain" aria-label="Atmosphere volume"></label>
+        <label><span>grain</span><input type="range" min="0" max="1" step=".01" data-atmosphere-setting="grain" aria-label="Atmosphere grain"></label>
+        <label><span>drift</span><input type="range" min="0" max="1" step=".01" data-atmosphere-setting="drift" aria-label="Atmosphere drift"></label>
+        <label><span>radio</span><input type="range" min="0" max="1" step=".01" data-atmosphere-setting="radio" aria-label="NASA Artemis radio"></label>
+        <label><span>noise</span><input type="range" min="0" max="1" step=".01" data-atmosphere-setting="noise" aria-label="Atmosphere noise"></label>
+      </div>
+      <div class="geometry-settings hand-harmony">
+        <label><span>key shift</span><select data-geometry-key aria-label="Hand synth key"></select></label>
+        <label><span>harmony</span><select data-geometry-harmony aria-label="Hand synth harmony"><option value="solo">solo</option><option value="fifths">fifths</option><option value="octaves">octaves</option></select></label>
+        <label><span>mode</span><select data-geometry-major aria-label="Hand synth scale"><option value="false">minor</option><option value="true">major</option></select></label>
+      </div>
+      <p class="stage-panel-note">Bend a finger to play a note. Open your palm to change its tone.</p>
+      <div class="stage-hand-gates" aria-label="Active hand notes">
+        <output data-stage-hand="left">L · —</output><output data-stage-hand="right">R · —</output>
+      </div>
+      </details>
+      </details>
+      <details class="stage-details" id="music-wagner"><summary>Wagner / Dirigent · local recordings</summary>
+      <section id="wagner-score" aria-label="Tristan und Isolde audio score" data-enabled="false" data-playing="false">
+        <header class="music-console__header"><div><strong>WAGNER / DIRIGENT</strong><span>LOCAL RECORDING · IMPORT YOUR AUDIO</span></div></header>
+        <div class="geometry-settings hand-harmony" data-wagner-effects>
+          <label><span>work</span><select data-wagner-work aria-label="Wagner work"><option value="local">Your audio file</option></select></label>
+          <label><span>speed</span><input type="range" min=".65" max="1.65" step=".01" value="1" data-wagner-rate aria-label="Wagner speed"></label>
+          <label><span>tone</span><input type="range" min="0" max="1" step=".01" value="1" data-wagner-color aria-label="Wagner tone"></label>
+          <label><span>echo</span><input type="range" min="0" max=".75" step=".01" value="0" data-wagner-echo aria-label="Wagner echo"></label>
+        </div>
+        <div class="music-console__transport"><button type="button" data-wagner-conduct aria-pressed="false">conduct by hand</button><output data-wagner-conduct-state></output></div>
+        <div class="music-console__transport">
+          <button type="button" data-wagner-play disabled>play Tristan</button>
+          <button type="button" data-wagner-stop>stop · rewind</button>
+          <output data-wagner-status role="status">local Tristan · ready to play</output>
+        </div>
+        <p class="music-console__route"><label>FILE LEVEL <input type="range" min="0" max="0.55" step="0.01" value="0.18" data-wagner-gain aria-label="Wagner playback level"></label> · <a href="https://www.youtube.com/watch?v=gfTcB6-4zJI" target="_blank" rel="noopener noreferrer">BÖHM / BAYREUTH 1966 ↗</a></p>
+        <p class="music-console__route"><input type="range" min="0" max="1" step="0.1" value="0" disabled data-wagner-seek aria-label="Tristan playback position"><output data-wagner-time>00:00:00 / 00:00:00</output></p>
+        <details class="stage-details">
+          <summary>Source and signal</summary>
+          <p class="music-console__diagnostic" data-wagner-meter>RMS 0 · LOW 0 / MID 0 / HIGH 0 · SWELL 0 · ONSET 0</p>
+          <p class="music-console__route"><label>LOCAL RECORDING <input type="file" accept="audio/*,video/mp4,video/webm" data-wagner-file aria-label="Local recording"></label> · <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">OPEN SPOTIFY ↗</a></p>
+          <p class="music-console__route"><button type="button" data-wagner-share>choose tab audio</button><button type="button" data-wagner-toggle aria-pressed="false">WAGNER OFF</button></p>
+        </details>
+      </section>
+      </details>
+      <details class="stage-details" id="music-details">
+        <summary>Hand and sound settings</summary>
+      <section class="music-console__transport">
+        <button type="button" data-music-test>play test note</button>
+        <button type="button" data-music-hats>hats off</button>
+        <button type="button" data-music-midi>connect midi · N</button>
+        <output data-music-status>sound disarmed</output>
+      </section>
+      <p class="music-console__route">START MUSIC LATCH sustains the Shaper Rhodes. Camera tracking gives each finger a voice. MIC + VOICE enables the selected mic, monitoring and the meter. Use CHECK to test input.</p>
+      <section id="mic-calibration" class="mic-calibration" aria-label="Room microphone calibration" data-phase="idle">
+        <header>
+          <strong>VOICE INPUT · ROOM CALIBRATION</strong>
+          <output data-mic-calibration-status>selected mic · calibration needed</output>
+        </header>
+        <div class="mic-monitor-presets" role="group" aria-label="Voice monitor character">
+          <button type="button" value="clear" data-mic-monitor-preset aria-pressed="true"><b>clear</b><span>close speech · wet 8%</span></button>
+          <button type="button" value="body" data-mic-monitor-preset aria-pressed="false"><b>body</b><span>chest + colour · wet 3%</span></button>
+          <button type="button" value="echo" data-mic-monitor-preset aria-pressed="false"><b>echo</b><span>repeat · wet 22%</span></button>
+        </div>
+        <output class="mic-monitor-preset-status" data-mic-monitor-preset-status>clear · wet 8% · feedback 11% · select does not start mic</output>
+        <section id="voice-game" class="voice-game" aria-label="Bounded live voice game" data-recording="false" data-active="false">
+          <header>
+            <strong>LIVE VOICE GAME · CATCH / RETURN</strong>
+            <output data-voice-game-status>slow orbit · 2 passes · 0/3 phrases</output>
+          </header>
+          <nav class="voice-game__presets" aria-label="Voice game character">
+            <button type="button" value="inhabit" data-voice-game-preset aria-pressed="false"><b>inhabit</b><span>late echo · returning voice</span></button>
+            <button type="button" value="echo-call" data-voice-game-preset aria-pressed="false"><b>echo call</b><span>natural · short return</span></button>
+            <button type="button" value="slow-orbit" data-voice-game-preset aria-pressed="true"><b>slow orbit</b><span>0.72× · dark return</span></button>
+            <button type="button" value="ghost-cut" data-voice-game-preset aria-pressed="false"><b>ghost cut</b><span>radio · falling cuts</span></button>
+          </nav>
+          <div class="voice-game__score">
+            <button type="button" value="2" data-voice-game-passes aria-pressed="true">2 passes</button>
+            <button type="button" value="3" data-voice-game-passes aria-pressed="false">3 passes</button>
+            <button type="button" data-voice-game-capture>catch phrase</button>
+            <button type="button" data-voice-game-clear>release all</button>
+          </div>
+          <div class="voice-game__slots" aria-label="Volatile voice phrase slots">
+            <button type="button" data-voice-game-slot="0" disabled>01 · empty</button>
+            <button type="button" data-voice-game-slot="1" disabled>02 · empty</button>
+            <button type="button" data-voice-game-slot="2" disabled>03 · empty</button>
+          </div>
+          <p>CATCH records up to seven seconds from the selected mic. Playback repeats two or three times and falls silent. The phrases stay in this tab. Press X to stop immediately.</p>
+        </section>
+        <section class="audio-diagnostics" aria-label="Browser audio diagnostics" data-audio-diagnostics data-context="not-created" data-clip="false">
+          <div class="audio-diagnostics__facts">
+            <span>context <b data-audio-context>not created</b></span>
+            <span>render estimate <b data-audio-latency>unavailable</b></span>
+            <span>input peak <b data-audio-peak>silent</b></span>
+            <span>clip <b data-audio-clip>clear · 0 events</b></span>
+          </div>
+          <div class="audio-diagnostics__receipt">
+            <output data-audio-diagnostic-status>browser facts only · physical round-trip requires listening</output>
+            <button type="button" data-audio-diagnostic-reset>reset peak / clip</button>
+          </div>
+        </section>
+        <div class="mic-calibration__actions">
+          <button type="button" data-mic-calibrate-quiet>quiet 3s</button>
+          <button type="button" data-mic-calibrate-speech>check “one-two-three”</button>
+          <button type="button" data-mic-calibrate-clear>clear receipt</button>
+        </div>
+        <div class="mic-calibration__meters">
+          <span>current <b data-mic-calibration-current>0.0%</b></span>
+          <span>peak hold <b data-mic-calibration-peak>0.0%</b></span>
+          <span>room floor <b data-mic-calibration-floor>default 1.8%</b></span>
+          <span>speech <b data-mic-calibration-speech>not checked</b></span>
+        </div>
+        <div class="mic-calibration__progress" aria-hidden="true"><i data-mic-calibration-progress></i></div>
+        <p>PRESET shapes local mic monitoring. QUIET mutes monitoring while measuring the noise floor. CHECK saves a result when your count is clearly above that floor.</p>
+      </section>
+      <section class="music-console__settings">
+        <label><span>Synth preset</span><select data-music-field="preset"><option value="rhodes">rhodes · warm</option><option value="kosmodrom">kosmodrom</option><option value="ghost-wire">ghost wire</option><option value="orbital-turbine">orbital turbine</option><option value="shaper-pulse">shaper pulse · hard</option><option value="soft-orbit">soft orbit</option></select></label>
+        <label><span>Gesture scale</span><select data-music-field="scale"><option value="minor-pentatonic">minor pentatonic</option><option value="minor">minor</option></select></label>
+        <label><span>volume <output data-music-output="master">18%</output></span><input type="range" min="0" max="0.32" step="0.01" data-music-field="master" value="0.18"></label>
+        <label><span>Filter brightness <output data-music-output="cutoff">34%</output></span><input type="range" min="0" max="1" step="0.01" data-music-field="cutoff" value="0.34"></label>
+        <label><span>echo <output data-music-output="delaySend">24%</output></span><input type="range" min="0" max="0.7" step="0.01" data-music-field="delaySend" value="0.24"></label>
+        <label><span>shaper drive <output data-music-output="saturation">10%</output></span><input type="range" min="0" max="1" step="0.01" data-music-field="saturation" value="0.10"></label>
+        <label><span>Hand control amount <output data-music-output="handRoute">0%</output></span><input type="range" min="0" max="1" step="0.05" data-music-field="handRoute" value="0"></label>
+        <label><span>Pinch notes</span><select data-music-field="handRole"><option value="both">both hands</option><option value="left">left</option><option value="right">right</option></select></label>
+        <label><span>Finger bend sensitivity</span><select data-music-field="fingerSensitivity"><option value="soft">soft · earlier</option><option value="balanced" selected>balanced</option><option value="firm">firm · firmer</option></select></label>
+        <label><span>Left / right octaves</span><select data-music-field="fingerOctaveScene"><option value="close" selected>close · L3 / R4</option><option value="wide">wide · L2 / R4</option><option value="high">high · L4 / R5</option></select></label>
+      </section>
+      <section id="mpe-output" class="mpe-output" aria-label="Optional MPE hand output" data-enabled="false" data-connected="false">
+        <header>
+          <strong>MPE HAND OUTPUT · OPTIONAL</strong>
+          <output data-mpe-status>standby · explicit enable required</output>
+        </header>
+        <div class="mpe-output__controls">
+          <button type="button" data-mpe-enable>enable mpe out</button>
+          <label><span>destination</span><select data-mpe-output-select disabled><option value="">no output · enable first</option></select></label>
+          <output data-mpe-activity>0 notes · no outbound MIDI</output>
+        </div>
+        <p>left/right fingers own channels 2–11 · vertical tip → per-note CC74 · deliberate horizontal travel → bounded ±50c · X sends note-off + all-sound-off.</p>
+      </section>
+      <section id="finger-calibration" class="finger-calibration" aria-label="Per-hand finger neutral calibration" data-phase="idle">
+        <header>
+          <strong>FINGER NEUTRAL · OPEN + RELAX</strong>
+          <output data-finger-calibration-status>left raw · right raw</output>
+        </header>
+        <div class="finger-calibration__actions">
+          <button type="button" data-finger-calibrate="left">calibrate left</button>
+          <button type="button" data-finger-calibrate="right">calibrate right</button>
+          <button type="button" data-finger-calibration-reset>reset both</button>
+        </div>
+        <div class="finger-calibration__profiles">
+          <span data-finger-profile="left">LEFT · RAW</span>
+          <span data-finger-profile="right">RIGHT · RAW</span>
+        </div>
+        <div class="finger-calibration__progress" aria-hidden="true"><i data-finger-calibration-progress></i></div>
+        <p>Select a side and hold an open, relaxed palm still for 1.2 seconds. This saves the resting position of each finger.</p>
+      </section>
+      <section id="finger-envelopes" class="finger-envelopes" aria-label="Per-finger attack and release controls">
+        <header>
+          <strong>FINGER GATES · ATTACK / RELEASE</strong>
+          <output data-finger-envelope-status>engine gates · local envelope score</output>
+          <button type="button" data-finger-envelope-reset>reset envelopes</button>
+        </header>
+        <div class="finger-envelopes__grid">
+          <article data-finger-envelope-card="thumb" data-gate="off">
+            <h3><span>THUMB</span></h3>
+            <div class="finger-envelopes__lanes"><span><b data-finger-note="left:thumb">L · D3</b><output data-finger-gate="left:thumb">OFF</output></span><span><b data-finger-note="right:thumb">R · D4</b><output data-finger-gate="right:thumb">OFF</output></span></div>
+            <label><span>attack <output data-finger-envelope-output="thumb:attack">18 ms</output></span><input type="range" min="0.004" max="0.18" step="0.002" value="0.018" data-finger-envelope="thumb" data-finger-envelope-field="attack"></label>
+            <label><span>release <output data-finger-envelope-output="thumb:release">280 ms</output></span><input type="range" min="0.06" max="1.2" step="0.01" value="0.28" data-finger-envelope="thumb" data-finger-envelope-field="release"></label>
+          </article>
+          <article data-finger-envelope-card="index" data-gate="off">
+            <h3><span>INDEX</span></h3>
+            <div class="finger-envelopes__lanes"><span><b data-finger-note="left:index">L · F3</b><output data-finger-gate="left:index">OFF</output></span><span><b data-finger-note="right:index">R · F4</b><output data-finger-gate="right:index">OFF</output></span></div>
+            <label><span>attack <output data-finger-envelope-output="index:attack">14 ms</output></span><input type="range" min="0.004" max="0.18" step="0.002" value="0.014" data-finger-envelope="index" data-finger-envelope-field="attack"></label>
+            <label><span>release <output data-finger-envelope-output="index:release">240 ms</output></span><input type="range" min="0.06" max="1.2" step="0.01" value="0.24" data-finger-envelope="index" data-finger-envelope-field="release"></label>
+          </article>
+          <article data-finger-envelope-card="middle" data-gate="off">
+            <h3><span>MIDDLE</span></h3>
+            <div class="finger-envelopes__lanes"><span><b data-finger-note="left:middle">L · G3</b><output data-finger-gate="left:middle">OFF</output></span><span><b data-finger-note="right:middle">R · G4</b><output data-finger-gate="right:middle">OFF</output></span></div>
+            <label><span>attack <output data-finger-envelope-output="middle:attack">22 ms</output></span><input type="range" min="0.004" max="0.18" step="0.002" value="0.022" data-finger-envelope="middle" data-finger-envelope-field="attack"></label>
+            <label><span>release <output data-finger-envelope-output="middle:release">320 ms</output></span><input type="range" min="0.06" max="1.2" step="0.01" value="0.32" data-finger-envelope="middle" data-finger-envelope-field="release"></label>
+          </article>
+          <article data-finger-envelope-card="ring" data-gate="off">
+            <h3><span>RING</span></h3>
+            <div class="finger-envelopes__lanes"><span><b data-finger-note="left:ring">L · A3</b><output data-finger-gate="left:ring">OFF</output></span><span><b data-finger-note="right:ring">R · A4</b><output data-finger-gate="right:ring">OFF</output></span></div>
+            <label><span>attack <output data-finger-envelope-output="ring:attack">28 ms</output></span><input type="range" min="0.004" max="0.18" step="0.002" value="0.028" data-finger-envelope="ring" data-finger-envelope-field="attack"></label>
+            <label><span>release <output data-finger-envelope-output="ring:release">380 ms</output></span><input type="range" min="0.06" max="1.2" step="0.01" value="0.38" data-finger-envelope="ring" data-finger-envelope-field="release"></label>
+          </article>
+          <article data-finger-envelope-card="pinky" data-gate="off">
+            <h3><span>PINKY</span></h3>
+            <div class="finger-envelopes__lanes"><span><b data-finger-note="left:pinky">L · C4</b><output data-finger-gate="left:pinky">OFF</output></span><span><b data-finger-note="right:pinky">R · C5</b><output data-finger-gate="right:pinky">OFF</output></span></div>
+            <label><span>attack <output data-finger-envelope-output="pinky:attack">34 ms</output></span><input type="range" min="0.004" max="0.18" step="0.002" value="0.034" data-finger-envelope="pinky" data-finger-envelope-field="attack"></label>
+            <label><span>release <output data-finger-envelope-output="pinky:release">460 ms</output></span><input type="range" min="0.06" max="1.2" step="0.01" value="0.46" data-finger-envelope="pinky" data-finger-envelope-field="release"></label>
+          </article>
+        </div>
+      </section>
+      <p class="music-console__role" data-music-role-hint>Both hands play notes. Openness, spread and movement shape the tone.</p>
+      <p class="music-console__diagnostic" data-music-output-path>audio not started · START SOUND → PLAY TEST NOTE verifies the browser-to-macOS path.</p>
+      <div class="music-console__keys-help"><b>PLAYABLE KEYS</b><span>Click or tap to play. MIDI lights the same note. The instrument keyboard accepts A W S E D F T G Y H U K. A toggles the microphone outside Music.</span></div>
+      <section class="music-console__keyboard" data-music-keyboard aria-label="Playable screen and MIDI keyboard"></section>
+      <section class="music-console__map" aria-label="Music causal map">
+        <div><b>THUMB · 1 · D</b><span>Each thumb plays D in its octave. Crossing your hands preserves their assignments.</span></div>
+        <div><b>INDEX · ♭3 · F</b><span>Each index finger plays F. Holding the bend sustains the note.</span></div>
+        <div><b>MIDDLE · 4 · G</b><span>Each middle finger plays G. Moving one hand out of view releases its five voices.</span></div>
+        <div><b>RING · 5 · A</b><span>Each ring finger plays A. Spreading your hands adds echo.</span></div>
+        <div><b>PINKY · ♭7 · C</b><span>Each pinky plays C. Movement adds texture.</span></div>
+        <div><b>PALM · EXPRESSION</b><span>Palm openness controls cutoff. X stops the full audio mix.</span></div>
+        <div><b>MIDI KEYS + VELOCITY</b><span>Keys set pitch. Velocity changes attack and light. Pitch bend affects held MIDI notes.</span></div>
+        <div><b>MUSIC LATCH / ABSENCE</b><span>The Rhodes continues when hands leave the frame. X stops all audio.</span></div>
+        <div><b>CURL / MOTION</b><span>Finger curl and motion change texture and density.</span></div>
+        <div><b>CC 1 / 7 / 21 / 71 / 74 / 91 / 64</b><span>mod / volume / dirt / edge / brightness / echo / sustain · audio only</span></div>
+        <div><b>MIDI CONNECT · N</b><span>Connect a MIDI keyboard. The local CoreMIDI bridge is available for Safari.</span></div>
+        <div><b>MPE OUT · OPTIONAL</b><span>Enable the external synth. Each finger gets one channel. Y sends CC74 and horizontal movement bends pitch up to ±50 cents.</span></div>
+        <div><b>A W S E D F T G Y H U K</b><span>Play chromatically from the computer keyboard while Music is open.</span></div>
+      </section>
+      <footer class="music-console__footer">
+        <span data-music-gesture>PINCH 0% · OPEN 0% · SPREAD 0% · CURL/MOVE 0%</span>
+        <span data-music-fingers>D4 0% · F4 0% · G4 0% · A4 0% · C5 0%</span>
+        <span data-music-last-event>last event · idle</span>
+        <span data-music-silence>sound disarmed</span>
+        <span data-music-midi-status>midi standby · press connect</span>
+        <span>TEST OUTPUT verifies Mac / projector audio</span>
+      </footer>
+      </details>
+    </aside>
+
+    <aside id="capture-console" class="capture-console" aria-label="Local performance capture" hidden>
+      <header class="capture-console__header">
+        <div>
+          <strong>LOCAL CAPTURE</strong>
+          <span>RECORDS THE PROJECTOR IMAGE · OPTIONAL LIVE SYNTH / SAMPLE MIX</span>
+        </div>
+        <button type="button" data-capture-close>close</button>
+      </header>
+      <section class="capture-console__transport">
+        <button type="button" data-capture-record>start visual take</button>
+        <output data-capture-status>capture idle · no stream at boot</output>
+      </section>
+      <label class="capture-console__audio"><input type="checkbox" data-capture-audio> <span>include live synth / sample / voice mix</span><small>never raw microphone input</small></label>
+      <section class="capture-console__map" aria-label="Capture explanation">
+        <div><b>WHAT IS SAVED</b><span>webgl scene + frame / tracking overlay</span></div>
+        <div><b>OPTIONAL SOUND</b><span>existing synth + sample playback only; it needs no new mic request</span></div>
+        <div><b>STOP / X</b><span>stops the local take; X discards an unfinished one</span></div>
+      </section>
+      <section class="score-recorder" aria-label="Local causal score recorder">
+        <header><strong>CAUSAL SCORE</strong><output data-score-status>score idle · no events</output></header>
+        <nav aria-label="Score transport">
+          <button type="button" data-score-record>rec score</button>
+          <button type="button" data-score-stop disabled>stop score</button>
+          <button type="button" data-score-clear disabled>clear</button>
+          <button type="button" data-score-download disabled>download json</button>
+        </nav>
+        <div class="score-recorder__events" data-score-events><p>gesture · focus lock · scene changes · no raw media</p></div>
+        <footer><span data-score-capacity>0 / 512 events · 0:00</span><span>local causal facts only</span></footer>
+      </section>
+      <div class="capture-console__takes" data-capture-takes aria-live="polite"><p>no takes yet</p></div>
+      <footer class="capture-console__footer"><span data-capture-capacity>0 / 6 takes · 0 MB / 300 MB</span><span>local only · explicit download</span></footer>
+    </aside>
+
+    <aside id="calibration" class="calibration" aria-label="Projector calibration" hidden>
+      <header>
+        <strong>PROJECTOR CALIBRATION</strong>
+        <span>LOCAL TEST SIGNAL · K TO CLOSE</span>
+      </header>
+      <div class="calibration__orientation" aria-hidden="true">
+        <span data-side="left">L · LEFT EDGE</span>
+        <span>OPTICAL CENTRE</span>
+        <span data-side="right">RIGHT EDGE · R</span>
+      </div>
+      <dl class="calibration__values">
+        <div data-calibration-param="black"><dt>BLACK POINT</dt><dd id="calibration-black">000.0%</dd></div>
+        <div data-calibration-param="white"><dt>WHITE CLIP</dt><dd id="calibration-white">100.0%</dd></div>
+        <div data-calibration-param="bloom"><dt>SAFE BLOOM</dt><dd id="calibration-bloom">000.0%</dd></div>
+        <div data-calibration-param="mirror"><dt>MIRROR</dt><dd id="calibration-mirror">NORMAL</dd></div>
+      </dl>
+      <p class="calibration__map"><b>Tab</b> select · <b>[ ]</b> adjust · <b>M</b> mirror · <b>K / Esc</b> close</p>
+    </aside>
+
+    <aside id="help" class="help" hidden>
+      <p class="help__preflight" data-help-preflight>PRE-FLIGHT · CAMERA STANDBY · HANDS WAITING · FACE WAITING · OBJECTS WAITING · SOUND OFF · MIDI STANDBY</p>
+      <section class="help__stage-check" aria-label="Stage check">
+        <strong>STAGE CHECK · BROWSER FACTS</strong>
+        <ul data-stage-check></ul>
+        <p>ROOM CHECK IS MANUAL · listen on the actual projector output; browser state cannot prove room sound or image.</p>
+      </section>
+      <section class="help__accessibility" aria-label="Performance accessibility">
+        <header><strong>ACCESS · LOCAL OPERATOR VIEW</strong><output data-accessibility-status>system defaults</output></header>
+        <nav aria-label="Accessibility preferences">
+          <button type="button" data-accessibility-setting="highContrast" aria-pressed="false">high contrast</button>
+          <button type="button" data-accessibility-setting="reducedMotion" aria-pressed="false">reduced motion</button>
+        </nav>
+        <dl class="keyboard-score" aria-label="Keyboard-only performance score">
+          <div><dt>START / SCENE</dt><dd><kbd>Enter</kbd> · <kbd>1–5</kbd> look · <kbd>Shift+1–3</kbd> full-scene preset</dd></div>
+          <div><dt>INPUTS</dt><dd><kbd>C</kbd> camera · <kbd>J</kbd> music · <kbd>I</kbd> music settings · <kbd>Shift+J</kbd> preset · <kbd>A</kbd> mic · <kbd>N</kbd> MIDI</dd></div>
+          <div><dt>TARGET</dt><dd><kbd>,</kbd> previous · <kbd>.</kbd> next · <kbd>O</kbd> trace</dd></div>
+          <div><dt>AUTHOR</dt><dd><kbd>G</kbd> frame · <kbd>Shift+G</kbd> two-hand frame · <kbd>Shift+F</kbd> frame preset · <kbd>E</kbd> routes · <kbd>S</kbd> sample</dd></div>
+          <div><dt>LOOK</dt><dd><kbd>T</kbd> tune · <kbd>P</kbd> tiles · <kbd>R</kbd> palette</dd></div>
+          <div><dt>SHOW</dt><dd><kbd>Q</kbd> geometry · <kbd>Shift+Q</kbd> preset · <kbd>Y</kbd> sacred layer · <kbd>Shift+Y</kbd> off · <kbd>L</kbd> capture · <kbd>K</kbd> projector · <kbd>F</kbd> full</dd></div>
+          <div><dt>EXIT / SILENCE</dt><dd><kbd>Esc</kbd> close · <kbd>X</kbd> silence</dd></div>
+        </dl>
+        <output class="help__quality" data-quality-status>quality full · measuring renderer fps</output>
+        <p>preferences stay in this browser · no input or sound starts here</p>
+      </section>
+      <section class="help__venue-profile" aria-label="Saved venue profile" data-venue-profile-state="empty">
+        <header><strong>VENUE PROFILE · LOCAL PREFERENCES</strong><output data-venue-profile-status>no venue profile saved</output></header>
+        <label><span>venue</span><input type="text" maxlength="40" value="venue 01" data-venue-profile-name></label>
+        <div class="help__venue-routes">
+          <output data-venue-profile-route="camera">camera · default</output>
+          <output data-venue-profile-route="mic">mic · default</output>
+          <output data-venue-profile-route="midi">midi · pending</output>
+          <output data-venue-profile-route="projector">projector · current</output>
+        </div>
+        <nav aria-label="Venue profile transport">
+          <button type="button" data-venue-profile-save>save current</button>
+          <button type="button" data-venue-profile-apply disabled>apply settings</button>
+          <button type="button" data-venue-profile-clear disabled>clear</button>
+        </nav>
+        <p>preferences only · apply never starts camera, mic, MIDI, sound or projector permission</p>
+      </section>
+      <section class="help__room-receipt" aria-label="Room receipt">
+        <strong>ROOM RECEIPT · OPERATOR OBSERVATION</strong>
+        <p>Tick only after you personally observed the room. This stays in this browser only.</p>
+        <div>
+          <label><input type="checkbox" data-stage-receipt="camera"> camera + landmarks</label>
+          <label><input type="checkbox" data-stage-receipt="projector"> projector image</label>
+          <label><input type="checkbox" data-stage-receipt="audio"> test note heard</label>
+          <label><input type="checkbox" data-stage-receipt="midi"> MIDI note heard</label>
+          <label><input type="checkbox" data-stage-receipt="gesture"> hand pinch heard</label>
+          <label><input type="checkbox" data-stage-receipt="voice"> poem heard</label>
+          <label><input type="checkbox" data-stage-receipt="capture"> local take saved</label>
+          <label><input type="checkbox" data-stage-receipt="panic"> panic silence</label>
+        </div>
+        <footer><output data-stage-receipt-status>no room observation saved</output><button type="button" data-stage-receipt-clear>clear local receipt</button></footer>
+      </section>
+      <section class="help__release-gate" aria-label="Stage release gate" data-release-state="loading">
+        <header><strong>STAGE RELEASE · V50</strong><output data-release-status>reading current build</output></header>
+        <div class="help__release-facts">
+          <output data-release-software>software · 63 JS · 4 PY · 4 browser · 30:00</output>
+          <output data-release-build>build · reading localhost stamp</output>
+          <output data-release-room>room · 0/8 observed</output>
+        </div>
+        <nav aria-label="Release gate transport">
+          <button type="button" data-release-bind disabled>bind room to build</button>
+          <button type="button" data-release-freeze disabled>freeze current build</button>
+          <button type="button" data-release-clear disabled>clear freeze</button>
+        </nav>
+        <p>Freeze requires this exact source stamp plus eight checks personally observed through the physical projector and PA.</p>
+      </section>
+      <p><b>1–5</b> mode · <b>F</b> fullscreen · <b>Space</b> pause · <b>M</b> mirror · <b>K</b> calibration</p>
+      <p><b>E</b> entity console · hands/body/face/objects/pointer routes</p>
+      <p><b>MUSIC · J</b> · Toggle the selected audio source. Use I for music settings.</p>
+      <p><b>Z</b> TIME OF POETRY · Create a voice from the script, then choose PLAY POEM. Camera and tracking stay local. Creating the voice sends the script to ElevenLabs. X stops playback.</p>
+      <p><b>SOUND</b> · I opens Music. PLAY TEST NOTE checks the output. N connects MIDI. S records a sample. X stops all sound.</p>
+      <p><b>S</b> SAMPLE · Record or select a sample, then choose START PLAYBACK. The synth can also play on its own.</p>
+      <p><b>G</b> HAND FRAME · two thumbs + index fingers · paint / object crop / prompt style / target</p>
+      <p><b>T</b> VISUAL LOOK · modes 1/4/5 · color, brightness, body reveal, voids and density</p>
+      <p><b>P</b> tracking tiles on/off · hides camera tiles, keeps anchors and hand/face trace</p>
+      <p><b>O</b> tracking trace on/off · hides all trace marks, keeps tracking and frame art live</p>
+      <p><b>I</b> music instrument · START SOUND → Play with keys, MIDI or hands.</p>
+      <p><b>Q</b> patch bus · local Ghost Wire shader layer: hands / FRAME / MIDI notes animate it; X holds it</p>
+      <p><b>L</b> local capture · explicit visual WebM takes of the projector image; no upload</p>
+      <p><b>D</b> Shaper demo · <b>Shift+D</b> debug · <b>A</b> mic · <b>N</b> MIDI connect · <b>H</b> HUD · <b>R</b> palette · <b>X</b> panic</p>
+      <p><b>U</b> apply a pending build · <b>Esc</b> keep the current stage</p>
+      <p><b>- +</b> intensity · <b>[ ]</b> feedback · <b>arrows</b> threshold / bloom</p>
+      <p>MIDI: note/velocity → pitch/attack · pitch bend → held notes · CC1 mod · 7 master · 21 dirt · 71 edge · 74 tone · 91 delay · 64 sustain</p>
+    </aside>
+
+    <output id="aria-status" class="sr-only" aria-live="polite"></output>
+  </main>
+  <script src="./stage-entry.js"></script>
+  <script type="module" src="./main.js"></script>
+
+</body>
+</html>

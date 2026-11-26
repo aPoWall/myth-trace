@@ -1,0 +1,234 @@
+{
+  "maxActions": 8,
+  "storyFields": {
+    "visual": ["preset"],
+    "geometry": ["preset"],
+    "light": ["strength", "palette", "attack"],
+    "sacred": ["preset", "strength"],
+    "music": ["preset", "key", "level"],
+    "phrase": ["degrees"]
+  },
+  "actions": {
+    "geometry": {
+      "required": [
+        "preset"
+      ],
+      "fields": {
+        "preset": {
+          "enum": [
+            "off",
+            "trace",
+            "cut",
+            "weave",
+            "auto",
+            "pigment-relief",
+            "point-lattice",
+            "kosmodrom",
+            "measured-mesh",
+            "resonant-contours",
+            "joint-constellation",
+            "diagonal-cube",
+            "time-filter-trails",
+            "wire-gloves",
+            "aftervoice",
+            "finger-loom",
+            "smile-prism",
+            "jaw-resonance"
+          ]
+        }
+      }
+    },
+    "visual": {
+      "required": [
+        "preset"
+      ],
+      "fields": {
+        "preset": {
+          "enum": [
+            "blue",
+            "silver",
+            "classic",
+            "contour",
+            "etching"
+          ]
+        }
+      }
+    },
+    "mode": {
+      "required": [
+        "value"
+      ],
+      "fields": {
+        "value": {
+          "integer": true,
+          "min": 0,
+          "max": 4
+        }
+      }
+    },
+    "light": {
+      "fields": {
+        "reliefDepth": {"min": 0, "max": 1},
+        "palette": {
+          "enum": [
+            "trace",
+            "frost",
+            "ember",
+            "mono"
+          ]
+        },
+        "strength": {
+          "min": 0,
+          "max": 1
+        },
+        "attack": {
+          "min": 0,
+          "max": 1
+        },
+        "auto": {
+          "boolean": true
+        },
+        "layers": {
+          "weights": [
+            "cross",
+            "orbit",
+            "ratio",
+            "trail",
+            "mesh",
+            "lattice",
+            "slice"
+          ]
+        }
+      }
+    },
+    "sacred": {
+      "required": [
+        "preset"
+      ],
+      "fields": {
+        "preset": {
+          "enum": [
+            "off",
+            "auto",
+            "vesica",
+            "rosette",
+            "lattice"
+          ]
+        },
+        "strength": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "lab": {
+      "fields": {
+        "preset": {
+          "enum": [
+            "off",
+            "tremor",
+            "rupture",
+            "residue"
+          ]
+        },
+        "amount": {
+          "min": 0,
+          "max": 1
+        },
+        "tear": {
+          "min": 0,
+          "max": 1
+        },
+        "memory": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "music": {
+      "fields": {
+        "preset": {
+          "enum": [
+            "glass",
+            "strings",
+            "dusk"
+          ]
+        },
+        "key": {
+          "enum": [
+            "dm",
+            "am",
+            "cm",
+            "fsm"
+          ]
+        },
+        "level": {
+          "min": 0,
+          "max": 0.65
+        },
+        "playing": {
+          "boolean": true
+        }
+      }
+    },
+    "release": {
+      "required": ["target"],
+      "fields": { "target": { "enum": ["guest"] } }
+    },
+    "accompany": {
+      "required": ["key", "preset", "bars", "degrees"],
+      "fields": {
+        "key": { "enum": ["dm", "am", "cm", "fsm"] },
+        "preset": { "enum": ["glass", "strings", "dusk"] },
+        "bars": { "integer": true, "min": 1, "max": 8 },
+        "degrees": { "notes": true },
+        "level": { "min": 0.02, "max": 0.45 }
+      }
+    },
+    "phrase": {
+      "required": [
+        "degrees"
+      ],
+      "fields": {
+        "degrees": {
+          "notes": true
+        }
+      }
+    },
+    "air": {
+      "fields": {
+        "preset": {
+          "enum": [
+            "blue",
+            "choir",
+            "dust",
+            "bass"
+          ]
+        },
+        "playing": {
+          "boolean": true
+        }
+      }
+    },
+    "demo": {
+      "required": [
+        "enabled"
+      ],
+      "fields": {
+        "enabled": {
+          "boolean": true
+        }
+      }
+    },
+    "frame": {
+      "required": [
+        "enabled"
+      ],
+      "fields": {
+        "enabled": {
+          "boolean": true
+        }
+      }
+    }
+  }
+}

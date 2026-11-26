@@ -1,0 +1,17 @@
+{
+  "name": "myth-trace-art",
+  "archive": "myth-trace-art.skill.zip",
+  "sha256": "8de1b969fc703b923146d2226bb55ae5ad0a841bf9e222a1295be891390e72c2",
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "references/case-study-agent-body.md",
+    "references/examples.md",
+    "references/implementation-recipes.md",
+    "references/public-case.md",
+    "references/release-formats.md",
+    "references/stack.md",
+    "scripts/audit_take.py",
+    "scripts/package_public.py"
+  ]
+}

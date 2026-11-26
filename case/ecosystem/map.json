@@ -1,0 +1,1501 @@
+{
+  "date": "2026-11-22",
+  "views": [
+    {
+      "id": "audio",
+      "name": "Audio",
+      "title": "Audio works",
+      "intro": "Выбери семейство, чтобы открыть инструменты, услышать запись и посмотреть, каким действием играет исполнитель. Пометка Studio study означает, что здесь опубликовано описание.",
+      "picture": "hands",
+      "nodes": [
+        {
+          "id": "strings",
+          "title": "Hands & strings",
+          "caption": "палец → нота",
+          "detail": "Натяни одну струну и отпусти. Затем коснись её второй рукой. Высота, материал и затухание меняют то, как один жест звучит в разных инструментах.",
+          "related": "sound-research/attack",
+          "links": [
+            [
+              "Play String Field",
+              "https://apowall.github.io/myth-trace/classic/?instrument=strings"
+            ]
+          ],
+          "works": [
+            {
+              "title": "String Field · Constellation",
+              "action": "Начни с How to Play. Потяни мышью от A до B и отпусти, включи Sound, выбери Play и пересечи струну. В Setup можно сложить арфу и аккорды в одном поле. В v7 секция Performance играет ритм и семплы, а History сохраняет собранный инструмент.",
+              "status": "Play online",
+              "url": "https://apowall.github.io/myth-trace/classic/?instrument=strings",
+              "clip": null
+            },
+            {
+              "title": "Hands · Tenfold",
+              "action": "Ля минор, 112 BPM. Бас и аккорд начинают восьмитактовую форму, затем вступает встречная мелодия. В студии десять пальцев добавляют ноты поверх партитуры.",
+              "status": "Listen",
+              "url": null,
+              "clip": "ecosystem/audio/tenfold.mp3"
+            },
+            {
+              "title": "Wire Gloves · Particles Orchestra",
+              "action": "Сгиб открывает голос конкретного пальца. Раскрытие ладони меняет окраску. Тот же жест выпускает зерно с измеренного кончика пальца.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "MIDI AI",
+              "action": "Управление музыкальным инструментом жестами. Публичный контроллер показывает связь положения руки и музыкального события.",
+              "status": "Play online",
+              "url": "https://apps.aimindset.org/midi-ai/",
+              "clip": null
+            },
+            {
+              "title": "Mudra MIDI",
+              "action": "Рука становится контроллером нот и MIDI. В проекте есть отдельный синтезатор и MIDI-выход.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Atlas Hand Resonator",
+              "action": "Руки управляют резонатором. Микрофон даёт управляющий сигнал, клавиатура и Web MIDI дают другие способы игры.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Manus",
+              "action": "Две руки исследуют уровни контекста. Микрофон считывает музыку в пространстве.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Twin Orbs / Ten Orbs",
+              "action": "Два круга или поле орбит реагируют на положения рук и аудиополосы. У Ten Orbs музыкальная атака запускает всплеск между руками.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            }
+          ]
+        },
+        {
+          "id": "voice",
+          "title": "Voice & resonance",
+          "caption": "голос → материал",
+          "detail": "Высота, огибающая и спектр голоса дают разные сигналы. Они могут менять модель резонатора, подсвечивать рот или управлять записью.",
+          "related": "sound-research/partials",
+          "links": [
+            [
+              "Открыть Звонницу",
+              "https://zvonnitsa.lab.aimindset.org/?tour=1"
+            ]
+          ],
+          "works": [
+            {
+              "title": "Звонница",
+              "action": "Пройди показ. Протяжная гласная отливает колокол, форманты меняют обертоны, движение руки ударяет, щипок глушит.",
+              "status": "Play online",
+              "url": "https://zvonnitsa.lab.aimindset.org/?tour=1",
+              "clip": null
+            },
+            {
+              "title": "Aftervoice / Voice Memory",
+              "action": "Голос оставляет короткий след в кадре и в звуковом буфере. В публичной сцене открой управление голосом или начни с указателя.",
+              "status": "Play online",
+              "url": "https://apowall.github.io/myth-trace/classic/",
+              "clip": null
+            },
+            {
+              "title": "Body Codec",
+              "action": "Авторская голосовая работа в звуковом разделе исходного кейса.",
+              "status": "Listen",
+              "url": null,
+              "clip": "alex-body-codec.mp3"
+            },
+            {
+              "title": "Air / Blue Air / Grain Choir / Radio Dust",
+              "action": "Синтезированные дрон, зерно и радиошум образуют регулируемую подложку. В студии вход mic → tone включается отдельно.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Murmur Orchestra",
+              "action": "Тёмная камерная сцена. Положение лица и рук ведёт браузерный звуковой движок.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Rap Play",
+              "action": "Отдельный вокальный инструмент для ритмизованной речи и записи дублей.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "X26 · Voice + Audio",
+              "action": "Голосовой инструмент учебной серии. Узлы контекстного графа задают исходный материал.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Кафедра / Salon Lustre",
+              "action": "Две речевые работы. В Кафедре события речи раскладываются по времени. В Люстре голос активного участника выделяет место в круге.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Trans",
+              "action": "Камерная проекция с холодным портретом и отдельным голосовым слоем. Руки выбирают участок кадра.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Blackframe Studio",
+              "action": "Строка проходит через сетку акцентов, четыре вокальных прохода и запись дубля. Dry и FX можно сверить по огибающей, пику и на слух.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            }
+          ]
+        },
+        {
+          "id": "pulse",
+          "title": "Pulse & transmission",
+          "caption": "ритм → импульс",
+          "detail": "Один такт позволяет сравнить, как ритм проходит через бас, сэмплы и изображение. Космическая связь здесь имеет отдельное авторство и источник.",
+          "related": "sound-research/radio",
+          "links": [
+            [
+              "NASA · источник эфира",
+              "https://www.nasa.gov/artemisaudio/"
+            ],
+            [
+              "Play Shaper Pulse",
+              "https://apps.aimindset.org/shaper-pulse/"
+            ]
+          ],
+          "works": [
+            {
+              "title": "Shaper Pulse",
+              "action": "Жест или MIDI даёт импульс. Линии на техническом поле показывают событие, выбранная дека добавляет звук.",
+              "status": "Play online",
+              "url": "https://apps.aimindset.org/shaper-pulse/",
+              "clip": null
+            },
+            {
+              "title": "Kosmodrom · Night Relay",
+              "action": "До минор, 68 BPM. Квинты, сигналы и нарезки деки Shaper Pulse собираются в восьмитактовую форму. Bad Sector – музыкальный референс. В записи использованы сигналы из Artemis Audio Library NASA и авторские орбитальные фактуры студии.",
+              "status": "Listen",
+              "url": "",
+              "clip": "ecosystem/audio/night-relay.mp3"
+            },
+            {
+              "title": "Bass Deck",
+              "action": "Start pointer field → Synth (I) → Play Bass Deck. Темп, фильтр, wobble и уровень меняются во время игры. Слой входит в общий микс с руками и семплером. Ниже записан короткий дубль.",
+              "status": "Play + listen",
+              "url": "https://apowall.github.io/myth-trace/classic/",
+              "clip": "ecosystem/audio/bass-deck.mp3"
+            },
+            {
+              "title": "Myth Trace · Techno",
+              "action": "Первая опубликованная звуковая зарисовка к полю. Сравни пульс этой версии с синкопами Tenfold.",
+              "status": "Listen",
+              "url": null,
+              "clip": "mythtrace-techno-preview.mp3"
+            },
+            {
+              "title": "Signal Loss",
+              "action": "Исполнители патчат связи между жестом, звуком и изображением в одном браузерном AudioContext.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "AI Mindset × Stas · AV experiment",
+              "action": "Публичная аудиовизуальная игровая поверхность совместного эксперимента.",
+              "status": "Play online",
+              "url": "https://apps.aimindset.org/aim-stas-av-experiment/",
+              "clip": null
+            },
+            {
+              "title": "Music Backline",
+              "action": "Восемь характеров фоновой музыки для монтажа. Одинаковая длина контрольной прослушки помогает выбрать пульс перед склейкой.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "title": "Sound into image",
+          "caption": "огибающая → отпечаток",
+          "detail": "В одних работах звук оставляет видимый след. В других исполнитель управляет одним событием сразу в изображении и в звуке.",
+          "related": "sound-research/history-filter",
+          "links": [
+            [
+              "Открыть печатный стол",
+              "https://apps.aimindset.org/overprint/?workspace=sheet&plate=horse"
+            ]
+          ],
+          "works": [
+            {
+              "title": "Myth Trace",
+              "action": "Начни с pointer field. Курсор задаёт точку, руки добавляют измеренные жесты. У изображения, трекинга и музыкального ввода отдельные переключатели.",
+              "status": "Play online",
+              "url": "https://apowall.github.io/myth-trace/classic/",
+              "clip": null
+            },
+            {
+              "title": "Overprint / Седло",
+              "action": "Публичный лист галопа совмещает фазы движения и экспозиции. Локальный исполнительский инструмент «Седло» относится к той же линии.",
+              "status": "Play online",
+              "url": "https://apps.aimindset.org/overprint/?workspace=sheet&plate=horse",
+              "clip": null
+            },
+            {
+              "title": "WagnerAbyss / Dirigent",
+              "action": "Рука дирижирует воспроизведением локальной записи. Скорость, тембр и отзвук существуют отдельно от синтезированных жестовых голосов.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Sonic Particles",
+              "action": "Сцена частиц связывает жест, положение тела и поле контекста. У ветки есть звуковой модуль и публичный инструмент.",
+              "status": "Play online",
+              "url": "https://sonic-particles.lab.aimindset.org/",
+              "clip": null
+            },
+            {
+              "title": "Bodyfield Resonance",
+              "action": "Исследование присутствия и измеряемого движения. Ветвь включает браузерные пробы и патч TouchDesigner.",
+              "status": "Play online",
+              "url": "https://bodyfield.lab.aimindset.org/",
+              "clip": null
+            },
+            {
+              "title": "The Dog Trace",
+              "action": "Голос зажигает фосфорный слой, движение раздвигает изображение, после исчезновения тела остаются экспозиции.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "FaceShader Pro",
+              "action": "Лицевые признаки и локальные датчики модулируют картину и звучание.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Converge / Converge 2",
+              "action": "Две реализации поля частиц вокруг тела. В рантайме предусмотрена работа со звуковым входом.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "NullDiffuse / shaper-body-v2",
+              "action": "Два шейдерных эскиза с аудиовходом: кольцевые частицы и поле тела.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "FamilyTV Dreams / oralFace",
+              "action": "Экранные исследования рук, в том числе для пианиста. Звуковая ветвь сопровождает рисунок рук.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "StyleField",
+              "action": "Поле частиц с послесвечением и звуковым трактом.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "TouchDesigner recipes",
+              "action": "Связка Clap → Noise переводит звуковое событие в изменение графа операторов.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Микрофонный контур · Aнечка",
+              "action": "Самостоятельный эксперимент с микрофоном. Интенсивность звука участвует в поведении объёмной формы.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            }
+          ]
+        },
+        {
+          "id": "context",
+          "title": "Context scores",
+          "caption": "событие → партитура",
+          "detail": "Здесь материалом служат интервалы времени, события и их плотность. В каталоге опубликовано правило преобразования каждого инструмента.",
+          "related": "sound-research/mapping",
+          "links": [],
+          "works": [
+            {
+              "title": "Daily Sonic",
+              "action": "Дневной контекст задаёт музыкальный материал. Исполнимая учебная дека воспроизводит путь от исходных признаков до звуковой пробы.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Day Resonance",
+              "action": "Каждое событие дня становится световой струной. Клавиша возбуждает соответствующий резонанс.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Week Collage",
+              "action": "Шесть слоёв недельного коллажа. Ладонь приближается к слою и прибавляет его звук и свет.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Week Residue",
+              "action": "События недели становятся изображением и звуковым остатком. Движение меняет способ чтения слоёв.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Week Trace",
+              "action": "Ветка MythTrace V51 превращает недельную партитуру в поле для камеры, лица, рук и звука.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Inflow Mirror",
+              "action": "Недельные потоки задают материал для браузерной генеративной композиции.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "TraceField",
+              "action": "Рабочее событие проходит по ребру графа. Звук отмечает прохождение и остаточный след.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "PartnerField",
+              "action": "Звуковой модуль включён в исследование отношений внутри графа.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Shaper Context",
+              "action": "Три варианта представления одного контекста: Drift, Grid, Strip. У вариантов общий слой сигналов.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Day Stream · MythTrace",
+              "action": "Участки занятого и свободного времени меняют давление поля и музыкальный темп. Дневной вход остаётся в студии.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            }
+          ]
+        },
+        {
+          "id": "studies",
+          "title": "Scores & studies",
+          "caption": "партитура → дубль",
+          "detail": "Учебные инструменты, заготовки и архивные версии помогают проследить, как проверялся приём до появления сценического инструмента.",
+          "related": "sound-research/takes",
+          "links": [],
+          "works": [
+            {
+              "title": "Sonic Paintings",
+              "action": "Практикум по сборке звуковых картин. Отдельная ветвь обучения жестовому MIDI и генеративному звуку.",
+              "status": "Workshop",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Daily Sonic Deck",
+              "action": "Исполняемая презентация о происхождении Daily Sonic. Слайды сопровождают пробы звука и визуализации.",
+              "status": "Workshop",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Knowledge Avatar Sketches",
+              "action": "Десять прототипов связи руки, звука и света. В одном варианте касание добавляет стеклянный тон поверх пульса.",
+              "status": "Sketch collection",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "X26 Farewell Transducer",
+              "action": "Одна исполнительская партитура проводит письмо через несколько визуальных и звуковых модальностей.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Friday Studies / TraceDesk",
+              "action": "Архив отклонённой ветки. Звуковая проба дошла до синтаксической проверки, сценическая проверка не зафиксирована.",
+              "status": "Archived",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Hands / Wagner layered transport",
+              "action": "В студии жестовый синтез и проигрыватель записи могут звучать одновременно. У каждого собственный транспорт и уровень.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "SOTNIK · guest phrase",
+              "action": "Заданная тональность, длительность и ступени превращаются в ограниченную музыкальную реплику. Локальная сцена отвечает за воспроизведение.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Glazov · 51",
+              "action": "Самостоятельная камерная браузерная работа со звуковым слоем.",
+              "status": "Archive",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Mindset Runner · game score",
+              "action": "Браузерная игровая партитура запускается кнопкой звука. Музыка генерируется через Web Audio.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            },
+            {
+              "title": "Oborot · trailer score",
+              "action": "Подложка меняется по монтажным секциям. Пульс синхронизирует появление карт, нарастания предваряют смену сцены.",
+              "status": "Studio study",
+              "url": null,
+              "clip": null
+            }
+          ]
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "обе техники возбуждают резонатор"
+        ],
+        [
+          0,
+          2,
+          "накладывает ноту на пульс"
+        ],
+        [
+          1,
+          3,
+          "управляет отпечатком"
+        ],
+        [
+          2,
+          3,
+          "даёт звуковую атаку"
+        ],
+        [
+          4,
+          2,
+          "задаёт форму во времени"
+        ],
+        [
+          5,
+          4,
+          "репетирует партитуру"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "harness",
+      "name": "Harness",
+      "title": "Development harness",
+      "intro": "От наблюдения на репетиции до выпуска. Контекст, тесты и записи связывают итерации. Здесь и далее описан студийный процесс. Веб-инструменты отмечены прямыми ссылками.",
+      "picture": "hands",
+      "nodes": [
+        {
+          "id": "context",
+          "title": "Context",
+          "caption": "SPEC / references",
+          "detail": "Исходная сцена, замороженные контракты и запись репетиции задают границы правки. Исследование добавляет конкретный приём, например связь между сгибом пальца и нотой.",
+          "links": [],
+          "related": "research/reference"
+        },
+        {
+          "id": "case",
+          "title": "Scene recipe",
+          "caption": "gesture → response",
+          "detail": "Карточка связывает действие исполнителя с наблюдаемым результатом. В Hands сгиб пальца добавляет ноту поверх Tenfold. Тот же дубль DSCF4882 можно подать на трекер при повторной проверке.",
+          "links": [
+            [
+              "Услышать Tenfold",
+              "#audio/strings"
+            ]
+          ],
+          "related": "skills/method"
+        },
+        {
+          "id": "verify",
+          "title": "Isolated QA",
+          "caption": "Node / Python / Chrome",
+          "detail": "Для кандидата scene-build сохраняет снимок данных и отпечаток исходников, поднимает временный сервер на свободном порту и запускает тесты. Chrome проверяет превью, варианты и применение к целевой сцене.",
+          "links": [],
+          "related": "runbook/check"
+        },
+        {
+          "id": "receipt",
+          "title": "Receipt",
+          "caption": "take / version / limits",
+          "detail": "В журнале остаются дата, входной материал, результат и пределы проверки. Замер PCM подтверждает сигнал. Проверку слышимости в зале и работу проектора исполнитель отмечает отдельно для конкретной сборки.",
+          "links": [],
+          "related": "history/release"
+        },
+        {
+          "id": "apply",
+          "title": "Stage apply",
+          "caption": "target / busy / edition",
+          "detail": "Сцена принимает свежий пакет параметров для активной карточки, когда позволяет её состояние. При правке кода SSE показывает сборку. U применяет её после завершения и сохранения дубля. Интерфейс предлагает Resume для звука.",
+          "links": [],
+          "related": "runtime/score"
+        },
+        {
+          "id": "edition",
+          "title": "Verified edition",
+          "caption": "verify → publish",
+          "detail": "После повторной проверки студия сохраняет предыдущую редакцию и переключает пакет сцены. Публичные версии выпускаются отдельно через репозиторий публикаций и проверяются по внешнему адресу.",
+          "links": [],
+          "related": "runbook/publish"
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "ограничивает задачу"
+        ],
+        [
+          1,
+          2,
+          "задаёт проверяемый результат"
+        ],
+        [
+          2,
+          5,
+          "допускает выпуск"
+        ],
+        [
+          5,
+          4,
+          "доставляет cue"
+        ],
+        [
+          4,
+          3,
+          "даёт новый дубль"
+        ],
+        [
+          3,
+          0,
+          "уточняет контекст"
+        ]
+      ],
+      "start": 1
+    },
+    {
+      "id": "runtime",
+      "name": "Runtime",
+      "title": "Signal architecture",
+      "intro": "От кадра и управляющего сигнала до изображения, звука и записи.",
+      "picture": "blue",
+      "nodes": [
+        {
+          "id": "input",
+          "title": "Input",
+          "caption": "camera / mic / MIDI",
+          "detail": "Камера или файл дают кадр. Микрофон даёт уровень и спектр, MIDI – ноты и контроллеры. Указатель позволяет начать сцену до выдачи разрешений.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "tracking",
+          "title": "Landmarks",
+          "caption": "MediaPipe / WASM",
+          "detail": "Локальный Tasks Vision обрабатывает лицо, руки и позу. EfficientDet Lite0 определяет классы объектов. Сглаженные точки и уверенность поступают в TrackingFrame. В конфигурации закреплена версия 0.10.18.",
+          "links": [
+            [
+              "MediaPipe · Hand Landmarker",
+              "https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "score",
+          "title": "Scene controls",
+          "caption": "CONFIG / ES modules",
+          "detail": "Сценарий задаёт комбинацию изображения, геометрии, рамки и музыки. main.js соединяет её с жестами. Параметры каждого слоя доступны в нижнем пульте. В Sacred Forms одни и те же правила работают на сцене и в превью.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "capture",
+          "title": "Take",
+          "caption": "MediaRecorder / FFmpeg",
+          "detail": "Локальная запись соединяет изображение и выбранный микс. Сырой дубль можно сохранить, а затем собрать вертикальный ролик через FFmpeg. Внешний монтаж находится за пределами цикла отрисовки.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "audio",
+          "title": "Sound",
+          "caption": "Web Audio / AudioWorklet",
+          "detail": "Музыкальные слои Hands, Wagner, Particles и Air имеют собственные транспорты и уровни. У Signalsmith Stretch локальный WASM/AudioWorklet. Жест пальца и звучание общего микса можно проверять по PCM.",
+          "links": [
+            [
+              "Web Audio · W3C",
+              "https://www.w3.org/TR/webaudio/"
+            ],
+            [
+              "Web MIDI · W3C",
+              "https://www.w3.org/TR/webmidi/"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "image",
+          "title": "Image",
+          "caption": "WebGL2 / Canvas 2D",
+          "detail": "WebGL2 рисует видео, частицы, обратную связь и свечение. Canvas 2D добавляет контуры, метки и порталы в координатах кадра. Точки глаз и ладоней поступают от трекера.",
+          "links": [],
+          "related": null
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "кадры"
+        ],
+        [
+          1,
+          2,
+          "измеренные точки"
+        ],
+        [
+          2,
+          5,
+          "слои изображения"
+        ],
+        [
+          2,
+          4,
+          "ноты и тембры"
+        ],
+        [
+          5,
+          3,
+          "видеопоток"
+        ],
+        [
+          4,
+          3,
+          "аудиомикс"
+        ],
+        [
+          0,
+          4,
+          "микрофон и MIDI"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "title": "Edition history",
+      "intro": "Вехи с датами из спецификации, журнала репетиций и принятых референсов.",
+      "picture": "contour",
+      "nodes": [
+        {
+          "id": "origin",
+          "title": "First instrument",
+          "caption": "08 AUG 2026",
+          "detail": "В v1 зафиксированы измеренные якоря, монохромная камера, порталы и единый контракт между модулями. В v2 добавили позу, в v3 – историю кадров для отложенных порталов.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "grammar",
+          "title": "Performance grammar",
+          "caption": "09 AUG 2026",
+          "detail": "Камера, руки, голос, ROI и локальная запись вошли в переносимую карту навыка myth-trace-art. Рамка, которую задаёт исполнитель, получила отдельный смысл от бокса детектора.",
+          "links": [],
+          "related": "skills/instrument"
+        },
+        {
+          "id": "release",
+          "title": "Rehearsal gate",
+          "caption": "15–16 AUG 2026",
+          "detail": "Появились профили площадки, управление качеством и прогоны на отказ устройств. Проверку физической площадки привязали к редакции выступления.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "today",
+          "title": "Playable cases",
+          "caption": "20–21 NOV 2026",
+          "detail": "Звук собрали в независимые слои. У сцен появились карточки с жестом и правилом, снятые примеры и интерактивная геометрия. Из карточки можно перейти к её параметрам и сохранить собственный вариант.",
+          "links": [
+            [
+              "Открыть звуковые работы",
+              "#audio/strings"
+            ]
+          ],
+          "related": "harness/case"
+        },
+        {
+          "id": "studies",
+          "title": "Shaper Field",
+          "caption": "14–17 NOV 2026",
+          "detail": "Появились исследования упаковки точек, привязки к лицу и жестов, затем Tracking Studies и партитура демо. Диагонали, следы и узлы получили собственные проверяемые движения.",
+          "links": [],
+          "related": "research/mohr"
+        },
+        {
+          "id": "wagner",
+          "title": "WagnerAbyss",
+          "caption": "23–24 OCT 2026",
+          "detail": "Соседняя работа развила язык MythTrace. Из входного экрана и пульта выросла сцена дирижирования. Разбор пополнил video-art примером проверки кадра и звука на одном музыкальном отрезке.",
+          "links": [],
+          "related": "skills/video"
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "контракт становится методом"
+        ],
+        [
+          1,
+          2,
+          "проверка площадки"
+        ],
+        [
+          2,
+          5,
+          "следующая документированная веха"
+        ],
+        [
+          5,
+          4,
+          "ноябрьские исследования"
+        ],
+        [
+          4,
+          3,
+          "сборка игровых карточек"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "skills",
+      "name": "Skills",
+      "title": "Skill lineage",
+      "intro": "Как опыт одной сцены превращается в воспроизводимый способ работы.",
+      "picture": "etching",
+      "nodes": [
+        {
+          "id": "video",
+          "title": "video-art",
+          "caption": "image / performance",
+          "detail": "Общий навык выбирает визуальный стек и связывает вход с изображением. Разбор WagnerAbyss закрепляет возврат к принятому исходнику и сравнение кадров.",
+          "links": [
+            [
+              "Смотреть выступление",
+              "/#field"
+            ],
+            [
+              "TouchDesigner · operators",
+              "https://docs.derivative.ca/Operator"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "instrument",
+          "title": "myth-trace-art",
+          "caption": "signal / score / take",
+          "detail": "Специализация описывает сигналы EVENT, RANGE и ABSENCE, локальный runtime, репетицию и выпуск дубля. 9 августа переносимую карту зафиксировали в журнале MythTrace.",
+          "links": [
+            [
+              "Карта навыка",
+              "myth-trace-art.skill.md"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "method",
+          "title": "Visual Art · gesture rule",
+          "caption": "input → form",
+          "detail": "Визуальная практика описывает измеряемый вход и его пространственный образ. Audio Art задаёт высоту, огибающую и условие тишины. Video Art связывает обе части во времени и сверяет дубль с исходным кадром.",
+          "links": [],
+          "related": "harness/verify"
+        },
+        {
+          "id": "audio",
+          "title": "audio-art",
+          "caption": "gesture / DSP / PCM",
+          "detail": "Аудиопрактика формулирует условия возникновения ноты, границы тишины и поведение уровней. Опыт ShaperPulse и замер микса дополняют визуальную методику.",
+          "links": [
+            [
+              "Слушать партитуры",
+              "#audio/pulse"
+            ],
+            [
+              "Web Audio · signal graph",
+              "https://www.w3.org/TR/webaudio/"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "take",
+          "title": "Take audit",
+          "caption": "audit_take / reel-edit",
+          "detail": "Video Art фиксирует кадр и общий микс. Проверка дубля устанавливает длительность, наличие видео и аудиосигнала. Монтаж собирает горизонтальную или вертикальную версию из принятых дублей.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "worker",
+          "title": "Iteration brief",
+          "caption": "one case / one receipt",
+          "detail": "Фоновое задание проекта начинает с проверки STOP, ideas.stop и бюджета. Затем выбирает одну правку, при необходимости сверяет до двух первоисточников через Exa и записывает результат проверки. На дату карты в Orca включена «MythTrace · фоновая доработка» на 11:00 по Лиссабону. В трёх последних записях один завершённый запуск и два пропуска по предварительной проверке.",
+          "links": [
+            [
+              "Роли исполнителей",
+              "#agents/lead"
+            ]
+          ],
+          "related": "runbook/context"
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "визуальная методика"
+        ],
+        [
+          3,
+          1,
+          "музыкальная методика"
+        ],
+        [
+          1,
+          2,
+          "общая ссылка"
+        ],
+        [
+          1,
+          4,
+          "сценарий выпуска"
+        ],
+        [
+          2,
+          5,
+          "инструкция для итерации"
+        ],
+        [
+          4,
+          5,
+          "повторяемый вход"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "agents",
+      "name": "Agents",
+      "title": "Scene workers",
+      "intro": "Роли одной итерации. В фоне одну карточку ведёт один исполнитель. Узлы показывают, кому принадлежит каждый участок.",
+      "picture": "wire-gloves",
+      "nodes": [
+        {
+          "id": "lead",
+          "title": "Coordinator",
+          "caption": "case / ownership",
+          "detail": "Выбирает одну карточку и задаёт пробу. В Wire Gloves сгиб одного пальца должен одновременно дать ноту и след зерна. В задании фиксируются вход, ожидаемый отклик, файл и ответственный.",
+          "links": [],
+          "related": "skills/worker"
+        },
+        {
+          "id": "reference",
+          "title": "Research",
+          "caption": "reference / gesture",
+          "detail": "Разбирает наблюдаемое действие в исходном видео. Передаёт исполнителю один воспроизводимый пример и ссылку. Для нового варианта сначала готовится предложение с указанием источника.",
+          "links": [],
+          "related": "research/mohr"
+        },
+        {
+          "id": "landmarks",
+          "title": "Tracking",
+          "caption": "landmark / confidence",
+          "detail": "Владеет tracking.js. Передаёт положение пальца, лица или выбранного объекта в координатах сцены. На том же входе проверяет потерю точки, затухание и возврат.",
+          "links": [],
+          "related": "runtime/tracking"
+        },
+        {
+          "id": "release",
+          "title": "Verify and release",
+          "caption": "stand / edition",
+          "detail": "Координатор проверяет карточку на изолированном стенде. Сценические параметры принимаются между дублями. Исполнитель подтверждает обновление кода после сохранения записи.",
+          "links": [],
+          "related": "runbook/check"
+        },
+        {
+          "id": "sound",
+          "title": "Audio",
+          "caption": "note / silence",
+          "detail": "Владеет звуковым трактом. На примере Wire Gloves связывает сгиб пальца с началом ноты, отпускание с её окончанием. Передаёт координатору измерение звучания на том же жесте.",
+          "links": [],
+          "related": "runtime/audio"
+        },
+        {
+          "id": "visual",
+          "title": "Visual",
+          "caption": "frame / response",
+          "detail": "Владеет WebGL-рендером. В Aftervoice сверяет раскрытие контура у рта с движением челюсти. Сравнивает один кадр дубля до и после правки и передаёт координатору результат.",
+          "links": [],
+          "related": "runtime/image"
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "уточняет референс"
+        ],
+        [
+          1,
+          2,
+          "задаёт наблюдаемый жест"
+        ],
+        [
+          2,
+          5,
+          "поставляет координаты"
+        ],
+        [
+          2,
+          4,
+          "поставляет жест"
+        ],
+        [
+          5,
+          3,
+          "сдаёт сравнение кадров"
+        ],
+        [
+          4,
+          3,
+          "сдаёт звуковую пробу"
+        ],
+        [
+          3,
+          0,
+          "возвращает результат"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "title": "Research traces",
+      "intro": "Три линии происхождения. Каждая ведёт от источника к наблюдаемому эффекту.",
+      "picture": "focus",
+      "nodes": [
+        {
+          "id": "reference",
+          "title": "SignalLoss + ShaperPulse",
+          "caption": "local instruments",
+          "detail": "В августовском инвентаре SignalLoss дал приёмы трекинга и телеметрии, FaceShader – работу с камерой в WebGL2, ShaperPulse – сканирование и музыкальные импульсы.",
+          "links": [
+            [
+              "Shaper Pulse",
+              "https://apps.aimindset.org/shaper-pulse/"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "crystal",
+          "title": "Close packing",
+          "caption": "crystallography",
+          "detail": "Исследование от 14 ноября разбирает, как один плотный слой даёт шесть ближайших соседей, а укладка ABC добавляет по три сверху и снизу. Эту конструкцию можно проверить вращением.",
+          "links": [
+            [
+              "Cambridge DoITPoMS · close packing",
+              "https://www.doitpoms.ac.uk/tlplib/crystallography3/HTML5/close_packing.html"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "mohr",
+          "title": "Mohr + TouchDesigner",
+          "caption": "hypercube / temporal trails",
+          "detail": "Из работ Манфреда Мора взяли правило диагонального пути по рёбрам гиперкуба. У Time Filter POP и TUIO изучали историю точки и разрыв следа при потере измерения.",
+          "links": [
+            [
+              "Manfred Mohr · Combinatorics",
+              "https://www.emohr.com/themes/combinatoric.html"
+            ],
+            [
+              "Derivative · Time Filter POP",
+              "https://docs.derivative.ca/Time_Filter_POP"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "sector",
+          "title": "Kosmodrom",
+          "caption": "signal → scan",
+          "detail": "Слой Sector Scan переводит активность исполнителя или сэмпла в полосы и кольца. Night Relay использует локальную деку ShaperPulse. Bad Sector указан как художественная отсылка.",
+          "links": [
+            [
+              "Авторский альбом · Bad Sector",
+              "https://bad-sector.bandcamp.com/album/kosmodrom"
+            ],
+            [
+              "Источник семплов · NASA",
+              "https://www.nasa.gov/artemisaudio/"
+            ],
+            [
+              "Слушать Night Relay",
+              "#audio/pulse"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "lattice",
+          "title": "Point Lattice",
+          "caption": "plane → crystal",
+          "detail": "Отдельный рендерер строит узлы, соединяет равноудалённых соседей и проецирует три слоя. В карточке можно выбрать Plane или Crystal и перенести выбор на сцену.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "trails",
+          "title": "Tracking Studies",
+          "caption": "gesture → projection",
+          "detail": "В Diagonal Cube движение меняет проекцию куба. В Time Filter Trails след сохраняет историю одной измеренной точки. Эти исследования реализованы в браузерном слое геометрии.",
+          "links": [
+            [
+              "TouchDesigner · Time Filter POP",
+              "https://docs.derivative.ca/Time_Filter_POP"
+            ]
+          ],
+          "related": "runtime/tracking"
+        }
+      ],
+      "edges": [
+        [
+          0,
+          3,
+          "телеметрия и архив звуков"
+        ],
+        [
+          1,
+          4,
+          "расстояния между узлами"
+        ],
+        [
+          2,
+          5,
+          "пути по рёбрам и следы"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "sound-research",
+      "name": "Sound studies",
+      "title": "Sound research",
+      "intro": "Шесть исполнительских вопросов из исследований звука. Выбери узел, чтобы увидеть решение в конкретной работе, перейти к источнику или услышать результат.",
+      "picture": "voice",
+      "nodes": [
+        {
+          "id": "attack",
+          "title": "Note & release",
+          "caption": "порог / отпускание",
+          "detail": "Для Wire Gloves сгиб и отпускание имеют разные пороги. Это позволяет удержать ноту при мелком дрожании пальца. String Field различает построение, фиксацию и повторное возбуждение одной струны.",
+          "links": [
+            [
+              "MediaPipe · Hand Landmarker",
+              "https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker/web_js"
+            ],
+            [
+              "Web Audio · automation",
+              "https://www.w3.org/TR/webaudio/"
+            ],
+            [
+              "Web MIDI",
+              "https://www.w3.org/TR/webmidi/"
+            ]
+          ],
+          "related": "audio/strings"
+        },
+        {
+          "id": "partials",
+          "title": "Voice & partials",
+          "caption": "высота / обертон",
+          "detail": "В Звоннице длительная гласная задаёт высоту колокола. Близость гармоники голоса к моде колокола определяет, насколько сильно она раскачается. В String Field голос окрашивает будущий щипок через огибающую и яркость.",
+          "links": [
+            [
+              "Открыть показ Звонницы",
+              "https://zvonnitsa.lab.aimindset.org/?tour=1"
+            ],
+            [
+              "Web Audio · analyser",
+              "https://www.w3.org/TR/webaudio/#AnalyserNode"
+            ]
+          ],
+          "related": "audio/voice"
+        },
+        {
+          "id": "radio",
+          "title": "Archive & synthesis",
+          "caption": "архив / партитура",
+          "detail": "В Shaper Pulse и Night Relay у сэмпла есть источник, точка входа и скорость. Архив NASA даёт музыкальный материал. Kosmodrom группы Bad Sector задаёт художественный ориентир для поля и радиообмена.",
+          "links": [
+            [
+              "Artemis Audio Library",
+              "https://www.nasa.gov/artemisaudio/"
+            ],
+            [
+              "Bad Sector · Kosmodrom",
+              "https://bad-sector.bandcamp.com/album/kosmodrom"
+            ]
+          ],
+          "related": "audio/pulse"
+        },
+        {
+          "id": "history-filter",
+          "title": "Time & residue",
+          "caption": "история измерения",
+          "detail": "История измеренной точки превращает движение в линию, а затухание отделяет новый жест от предыдущего. В Overprint ту же задачу видно на фотографической пластине: несколько фаз галопа живут в одном отпечатке.",
+          "links": [
+            [
+              "Derivative · Time Filter POP",
+              "https://docs.derivative.ca/Time_Filter_POP"
+            ],
+            [
+              "Галоп · лист экспозиций",
+              "https://apps.aimindset.org/overprint/?workspace=sheet&plate=horse"
+            ]
+          ],
+          "related": "audio/image"
+        },
+        {
+          "id": "mapping",
+          "title": "Day into score",
+          "caption": "плотность / время",
+          "detail": "В Day Resonance одно событие задаёт одну игровую струну. В Week Collage близость руки меняет громкость отдельного слоя. В Day Stream занятость даёт медленную управляющую кривую для общей партитуры.",
+          "links": [
+            [
+              "Web Audio · AudioParam",
+              "https://www.w3.org/TR/webaudio/#AudioParam"
+            ]
+          ],
+          "related": "audio/context"
+        },
+        {
+          "id": "takes",
+          "title": "Recording & timing",
+          "caption": "луп / дубль",
+          "detail": "Три разбора вокальной студии от 23 и 31 октября и 4 ноября проследили путь от сетки акцентов к дублю. Исследовали запись в стиле клипа, различие изменения скорости и растяжения, сверку сухого и обработанного вокала. Эти приёмы можно проследить в Rap Play и Blackframe.",
+          "links": [
+            [
+              "Ableton · Recording New Clips",
+              "https://www.ableton.com/en/live-manual/12/recording-new-clips/"
+            ],
+            [
+              "Signalsmith · Stretch design",
+              "https://signalsmith-audio.co.uk/writing/2023/stretch-design/"
+            ],
+            [
+              "Waves · rap vocals",
+              "https://www.waves.com/how-to-mix-powerful-rap-vocals-adlibs-and-more"
+            ]
+          ],
+          "related": "audio/studies"
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "выделяет атаку"
+        ],
+        [
+          1,
+          2,
+          "различает спектр"
+        ],
+        [
+          2,
+          3,
+          "оставляет фрагмент"
+        ],
+        [
+          4,
+          2,
+          "задаёт время"
+        ],
+        [
+          4,
+          5,
+          "формирует дубль"
+        ],
+        [
+          3,
+          5,
+          "задаёт память"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "services",
+      "name": "Services",
+      "title": "Service boundaries",
+      "intro": "Куда уходит каждый запрос и какие части выступления работают на самом Mac.",
+      "picture": "voice",
+      "nodes": [
+        {
+          "id": "stage",
+          "title": "Browser stage",
+          "caption": "local / on device",
+          "detail": "Трекинг и рендеринг исполняются в браузере. Веб-издание начинает с указателя. Студийное издание дополнительно подключает локальные сервисы.",
+          "links": [
+            [
+              "Myth Trace",
+              "https://apowall.github.io/myth-trace/classic/"
+            ],
+            [
+              "String Field",
+              "https://apowall.github.io/myth-trace/classic/?instrument=strings"
+            ]
+          ],
+          "related": "runtime/input"
+        },
+        {
+          "id": "router",
+          "title": "Local routes",
+          "caption": "HTTP / SSE",
+          "detail": "В студии разные входы обслуживают речь, генерацию, дневной ритм и сценические команды. Для управления музыкой достаточно плотности временных окон.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "sotnik",
+          "title": "SOTNIK",
+          "caption": "studio conductor",
+          "detail": "Студийный агент принимает короткую художественную задачу и параметры сцены. Он возвращает ограниченные музыкальные команды. Исполнитель прослушивает или применяет вариант.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "diffusion",
+          "title": "SD-Turbo",
+          "caption": "local / optional",
+          "detail": "В студии Diffusers и SD-Turbo интерпретируют карту точек как изображение. Регулятор задаёт долю этой фактуры в исходном кадре.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "whisper",
+          "title": "Whisper",
+          "caption": "local / optional",
+          "detail": "Голосовой вход отправляет короткий фрагмент на локальный whisper-cli. После распознавания временный файл удаляется. Текст может стать подписью у рта или командой после обращения к агенту.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "providers",
+          "title": "Provider APIs",
+          "caption": "remote / on request",
+          "detail": "Основной синтез работает в браузере. Во время авторской подготовки для отдельных фактур и голосовых проб использовались внешние модели. Готовая запись воспроизводится как отдельный слой.",
+          "links": [],
+          "related": null
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "локальные запросы"
+        ],
+        [
+          1,
+          2,
+          "указание и контекст"
+        ],
+        [
+          0,
+          3,
+          "координаты / запрос слоя"
+        ],
+        [
+          1,
+          4,
+          "короткое аудио"
+        ],
+        [
+          1,
+          5,
+          "промпт или текст"
+        ]
+      ],
+      "start": 0
+    },
+    {
+      "id": "runbook",
+      "name": "Runbook",
+      "title": "Operator runbook",
+      "intro": "Путь от первого жеста до проверенного публичного выпуска.",
+      "picture": "objects",
+      "nodes": [
+        {
+          "id": "context",
+          "title": "Locate context",
+          "caption": "case + references",
+          "detail": "Открой кейс, послушай исходный голос и выбери, чем управлять: изображением в MythTrace или натянутой струной в String Field.",
+          "links": [
+            [
+              "Исходный кейс",
+              "/"
+            ],
+            [
+              "Каталог",
+              "#audio/strings"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "start",
+          "title": "Start stage",
+          "caption": "pointer / hands",
+          "detail": "Start pointer field сразу открывает сцену. Start with hands отдельно запрашивает камеру. В String Field сначала поставь струну или добавь шаблон, затем включи Sound.",
+          "links": [
+            [
+              "Открыть сцену",
+              "https://apowall.github.io/myth-trace/classic/"
+            ],
+            [
+              "Играть струнами",
+              "https://apowall.github.io/myth-trace/classic/?instrument=strings"
+            ]
+          ],
+          "related": null
+        },
+        {
+          "id": "check",
+          "title": "Verify case",
+          "caption": "gesture → response",
+          "detail": "Пример objects-copper настраивает геометрию и атмосферу для Objects. verify выполняет полный локальный цикл на отдельном порту. qa-card-practice проверяет поведение двух геометрических карточек.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "map",
+          "title": "Start this map",
+          "caption": "public atlas",
+          "detail": "Вкладка Audio группирует работы по исполнительскому действию. Ссылку на любой узел можно скопировать из адресной строки. Внизу скачивается редактируемая схема.",
+          "links": [],
+          "related": null
+        },
+        {
+          "id": "observe",
+          "title": "Check the take",
+          "caption": "compare the take",
+          "detail": "После проверки параметров открой целевую карточку, затем сравни дубль с исходным. Код обновляется через баннер Apply. При записи приложение просит сначала закончить дубль, а после сохранения снова подтвердить обновление.",
+          "links": [],
+          "related": "harness/apply"
+        },
+        {
+          "id": "publish",
+          "title": "Publish cue",
+          "caption": "verified edition",
+          "detail": "После прогона на изолированной сцене оператор утверждает редакцию. Публичный пакет проходит проверку и выкладывается на тот же HTTPS-адрес. Затем в браузере повторяются запуск, жест и прослушивание. Репозиторий lab-sites доставляет статический пакет на сервер. Caddy отдаёт его по HTTPS. Открытая сцена живёт до следующего входа или перезагрузки.",
+          "links": [],
+          "related": null
+        }
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          "найти и запустить"
+        ],
+        [
+          1,
+          2,
+          "подготовить кандидат"
+        ],
+        [
+          2,
+          5,
+          "после приёмки"
+        ],
+        [
+          5,
+          4,
+          "увидеть результат"
+        ],
+        [
+          0,
+          3,
+          "открыть документацию"
+        ]
+      ],
+      "start": 0
+    }
+  ]
+}

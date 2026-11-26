@@ -1,0 +1,31 @@
+{
+  "proposals": [
+    {
+      "id": "blueprint-joints",
+      "title": "Blue Blueprint",
+      "look": "contour",
+      "geometry": "weave",
+      "sacred": "lattice",
+      "note": "Cool lines join the nodes, with a warm point on the active facet. Raise one palm to tilt the structure.",
+      "source": "https://www.instagram.com/reels/DfX5PQrMVbU/"
+    },
+    {
+      "id": "copper-crossing",
+      "title": "Copper Joint",
+      "look": "etching",
+      "geometry": "cut",
+      "sacred": "auto",
+      "note": "Bring both palms closer, then angle them diagonally. The geometry shifts between arcs and a lattice.",
+      "source": "https://www.metmuseum.org/art/collection/search/452379"
+    },
+    {
+      "id": "rotating-light-prop",
+      "title": "Light Modulator",
+      "look": "classic",
+      "geometry": "cut",
+      "sacred": "rosette",
+      "note": "Monochrome, a diagonal slice and a rosette. Rotate both palms to move circles through bands of light, echoing the perforated discs in Moholy-Nagy’s sculpture.",
+      "source": "https://harvardartmuseums.org/collections/object/299819"
+    }
+  ]
+}

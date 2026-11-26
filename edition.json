@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "stamp": "objects-copper-1",
+  "stage": "Shaper Field",
+  "sourceDate": "2026-11-21",
+  "studioCue": {
+    "target": "objects",
+    "geometry": {
+      "strength": 0.38,
+      "palette": "ember",
+      "layers": {
+        "mesh": 0.42,
+        "trail": 0.17
+      }
+    },
+    "atmosphere": {
+      "grain": 0.24
+    },
+    "version": "scene.99d16599a4d390d7",
+    "edition": 1
+  },
+  "mainSourceSha256": "d7288dcd6266155b410add45a34abc42f342e72740f6ae722dce7b8e0c62aa02",
+  "archive": {
+    "path": "./v22/",
+    "revision": "da61e6f53609b62bcd420e83cde9bc57c9bf2762"
+  }
+}
